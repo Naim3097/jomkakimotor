@@ -408,3 +408,35 @@
         height: 400px;
     }
 }
+
+/* --- Responsive Mobile Optimization --- */
+@media (max-width: 768px) {
+    .product-detail-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    /* On mobile, maybe move thumbs to bottom or hide if too cluttered, 
+       but for now let's keep them left or ensure they fit. */
+    .product-gallery {
+        flex-direction: column-reverse; /* Thumbs below */
+    }
+    .gallery-thumbs {
+        flex-direction: row;
+        width: 100%;
+        overflow-x: auto;
+    }
+    .thumb-item {
+        flex-shrink: 0;
+    }
+    
+    /* Adjust tabs usually found below */
+    .tabs-header {
+        flex-direction: column; /* Stack tabs if they exist */
+    }
+    .tabs-header .tab-btn {
+        width: 100%;
+        text-align: left;
+    }
+}
+

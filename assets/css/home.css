@@ -31,12 +31,14 @@
 .vehicle-filter-wrapper {
     width: 270px; /* Exact match to nav categories width typically */
     flex-shrink: 0;
+    margin-right: 0; /* Align tightly */
 }
 
 .hero-banner-wrapper {
     /* width value handled in html via flex-grow */
     flex-grow: 1;
     overflow: hidden; /* For slider */
+    width: calc(100% - 300px); /* Fallback/Helper to ensure space constraint */
 }
 
 .hero-banner-slider {

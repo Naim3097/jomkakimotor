@@ -24,7 +24,7 @@
                 <div class="top-links">
                     <a href="#"><img src="https://flagcdn.com/16x12/us.png" alt="" style="margin-right: 5px; vertical-align: middle;"> English</a>
                     <a href="#">($) USD</a>
-                    <a href="#"><i class="fas fa-user-circle"></i> Login / Register</a>
+                    <a href="my-account.html"><i class="fas fa-user-circle"></i> Login / Register</a>
                 </div>
             </div>
         </div>
@@ -47,9 +47,9 @@
                 <div class="header-icons">
                     <a href="#"><i class="fas fa-search" style="font-size: 1.1rem;"></i></a>
                     <a href="#"><i class="far fa-heart" style="font-size: 1.1rem;"></i></a>
-                    <a href="#" style="position: relative;">
+                    <a href="cart.html" style="position: relative;">
                         <i class="fas fa-shopping-bag" style="font-size: 1.3rem;"></i>
-                        <span style="position: absolute; top: -8px; right: -8px; background: var(--primary-color); color: white; width: 18px; height: 18px; border-radius: 50%; font-size: 0.7rem; display: flex; align-items: center; justify-content: center;">2</span>
+                        <span style="position: absolute; top: -8px; right: -8px; background: var(--primary-color); color: white; width: 18px; height: 18px; border-radius: 50%; font-size: 0.7rem; display: flex; align-items: center; justify-content: center;">0</span>
                     </a>
                 </div>
             </div>
@@ -62,11 +62,19 @@
                     <i class="fas fa-bars"></i> Browse Categories
                 </div>
                 <div class="nav-links">
-                    <a href="index.html">Home <i class="fas fa-chevron-down"></i></a>
-                    <a href="shop.html" class="active">Shop <i class="fas fa-chevron-down"></i></a>
-                    <a href="#">Elements <i class="fas fa-chevron-down"></i></a>
-                    <a href="#">Pages <i class="fas fa-chevron-down"></i></a>
-                    <a href="#">Like Theme</a>
+                    <a href="index.html">Home</a>
+                    <a href="shop.html" class="active">Shop</a>
+                    <!-- Dropdown structure -->
+                    <div style="position: relative; height: 100%; display: flex; align-items: center;" class="dropdown-parent">
+                        <a href="#" style="padding-right: 15px;">Pages <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
+                         <div class="dropdown-menu" style="position: absolute; top: 100%; left: 0; background: #fff; min-width: 200px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: none; z-index: 100;">
+                           <a href="my-account.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">My Account</a>
+                           <a href="track-order.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">Order Tracking</a>
+                           <a href="faq.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">FAQ</a>
+                           <a href="contact.html" style="color: #333; height: 40px; display: flex; align-items: center; padding-left: 15px;">Contact Us</a>
+                        </div>
+                    </div>
+                    <!-- End Dropdown -->
                 </div>
                 <div class="nav-search">
                     <i class="fas fa-search"></i> Search
@@ -117,212 +125,8 @@
 
             <!-- Shop Layout -->
             <div class="shop-layout">
-                
-                <!-- Product Grid (Left) -->
-                <div class="shop-products">
-                    <div class="products-grid-5">
-                       
-                        <!-- Product 1 -->
-                        <div class="product-card">
-                            <div class="product-img"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></div>
-                            <div class="product-info">
-                                <span class="category">Brakes</span>
-                                <h4 class="product-title"><a href="#">2-Piece Slotted Big Brake Kit</a></h4>
-                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
-                                <div class="price"><span class="new-price">$25.00</span></div>
-                            </div>
-                        </div>
 
-                         <!-- Product 2 -->
-                         <div class="product-card">
-                            <span class="badge badge-sale">-23%</span>
-                            <div class="product-img"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></div>
-                            <div class="countdown-timer">344 : 15 : 06 : 46</div>
-                            <div class="product-info">
-                                <span class="category">Wheels & Tires</span>
-                                <h4 class="product-title"><a href="#">Cooper Zeon Tires</a></h4>
-                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
-                                <div class="price"><span class="old-price">$90.00</span> <span class="new-price">$69.00</span></div>
-                            </div>
-                        </div>
-
-                        <!-- Product 3 -->
-                        <div class="product-card">
-                             <span class="badge badge-sale">-35%</span>
-                            <div class="product-img"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></div>
-                            <div class="countdown-timer">344 : 15 : 06 : 46</div>
-                            <div class="product-info">
-                                <span class="category">Custom Wheels</span>
-                                <h4 class="product-title"><a href="#">Crystal Blue with Machined Face</a></h4>
-                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
-                                <div class="price"><span class="old-price">$60.00</span><span class="new-price">$39.00</span></div>
-                            </div>
-                        </div>
-
-                        <!-- Product 4 -->
-                         <div class="product-card">
-                             <span class="badge badge-sale">-17%</span>
-                            <div class="product-img"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></div>
-                             <div class="countdown-timer">344 : 15 : 06 : 46</div>
-                            <div class="product-info">
-                                <span class="category">Custom Wheels</span>
-                                <h4 class="product-title"><a href="#">Custom Wheels Gold RTS</a></h4>
-                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
-                                <div class="price"><span class="old-price">$95.00</span><span class="new-price">$79.00</span></div>
-                            </div>
-                        </div>
-                        
-                        <!-- Product 5 -->
-                        <div class="product-card">
-                             <span class="badge badge-sale">-22%</span>
-                            <div class="product-img"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></div>
-                             <div class="countdown-timer">344 : 15 : 06 : 46</div>
-                            <div class="product-info">
-                                <span class="category">Custom Hoods</span>
-                                <h4 class="product-title"><a href="#">Duraflex Fiberglass Hood</a></h4>
-                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
-                                <div class="price"><span class="old-price">$50.00</span><span class="new-price">$39.00</span></div>
-                            </div>
-                        </div>
-
-                        <!-- Row 2 -->
-                        <div class="product-card">
-                            <div class="product-img"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></div>
-                             <div style="height: 25px;"></div>
-                            <div class="product-info">
-                                <span class="category">Detailing & Care</span>
-                                <h4 class="product-title"><a href="#">Electric Pressure Washer</a></h4>
-                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
-                                <div class="price"><span class="new-price">$50.00</span></div>
-                            </div>
-                        </div>
-
-                         <div class="product-card">
-                            <div class="product-img"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></div>
-                             <div style="height: 25px;"></div>
-                            <div class="product-info">
-                                <span class="category">Seats</span>
-                                <h4 class="product-title"><a href="#">Elite-X Sport Seats</a></h4>
-                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
-                                <div class="price"><span class="new-price">$60.00</span></div>
-                            </div>
-                        </div>
-
-                        <div class="product-card">
-                            <div class="product-img"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></div>
-                             <div style="height: 25px;"></div>
-                            <div class="product-info">
-                                <span class="category">Engine Covers</span>
-                                <h4 class="product-title"><a href="#">Gloss Caliper Covers</a></h4>
-                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
-                                <div class="price"><span class="new-price">$80.00</span></div>
-                            </div>
-                        </div>
-
-                        <div class="product-card">
-                             <span class="badge badge-sale">-16%</span>
-                            <div class="product-img"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></div>
-                             <div class="countdown-timer">344 : 15 : 06 : 46</div>
-                            <div class="product-info">
-                                <span class="category">Custom Wheels</span>
-                                <h4 class="product-title"><a href="#">Gunmetal with Machined Face</a></h4>
-                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
-                                <div class="price"><span class="old-price">$70.00</span><span class="new-price">$59.00</span></div>
-                            </div>
-                        </div>
-                        
-                        <div class="product-card">
-                             <span class="badge badge-sale">-21%</span>
-                            <div class="product-img"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></div>
-                             <div class="countdown-timer">344 : 15 : 06 : 46</div>
-                            <div class="product-info">
-                                <span class="category">Custom Fog Lights</span>
-                                <h4 class="product-title"><a href="#">Halo Projector Fog</a></h4>
-                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
-                                <div class="price"><span class="old-price">$75.00</span><span class="new-price">$59.00</span></div>
-                            </div>
-                        </div>
-
-                         <!-- Row 3 -->
-                        <div class="product-card">
-                             <span class="badge badge-sale">-27%</span>
-                            <div class="product-img"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></div>
-                             <div class="countdown-timer">344 : 15 : 06 : 46</div>
-                            <div class="product-info">
-                                <span class="category">Factory Headlights</span>
-                                <h4 class="product-title"><a href="#">Halogen Side Lightling</a></h4>
-                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
-                                <div class="price"><span class="old-price">$45.00</span><span class="new-price">$33.00</span></div>
-                            </div>
-                        </div>
-
-                         <div class="product-card">
-                             <span class="badge badge-sale">-25%</span>
-                            <div class="product-img"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></div>
-                             <div class="countdown-timer">344 : 15 : 06 : 46</div>
-                            <div class="product-info">
-                                <span class="category">Brakes</span>
-                                <h4 class="product-title"><a href="#">Imola Series Drilled and Slotted Brake</a></h4>
-                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
-                                <div class="price"><span class="old-price">$65.00</span><span class="new-price">$49.00</span></div>
-                            </div>
-                        </div>
-
-                        <div class="product-card">
-                            <div class="product-img"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></div>
-                             <div style="height: 25px;"></div>
-                            <div class="product-info">
-                                <span class="category">Lowering Kits</span>
-                                <h4 class="product-title"><a href="#">Lowering Kits</a></h4>
-                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
-                                <div class="price"><span class="new-price">$75.00</span></div>
-                            </div>
-                        </div>
-
-                         <div class="product-card">
-                             <span class="badge badge-sale">-13%</span>
-                            <div class="product-img"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></div>
-                             <div class="countdown-timer">344 : 15 : 06 : 46</div>
-                            <div class="product-info">
-                                <span class="category">Factory Headlights</span>
-                                <h4 class="product-title"><a href="#">Projector Headlights</a></h4>
-                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
-                                <div class="price"><span class="old-price">$45.00</span><span class="new-price">$39.00</span></div>
-                            </div>
-                        </div>
-                        
-                        <div class="product-card">
-                            <div class="product-img"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></div>
-                             <div style="height: 25px;"></div>
-                            <div class="product-info">
-                                <span class="category">Custom Fog Lights</span>
-                                <h4 class="product-title"><a href="#">Projector LED Fog Lights</a></h4>
-                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
-                                <div class="price"><span class="new-price">$25.00</span></div>
-                            </div>
-                        </div>
-
-                         <!-- Row 4 (Partial, just one item) -->
-                        <div class="product-card">
-                            <div class="product-img"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></div>
-                             <div style="height: 25px;"></div>
-                            <div class="product-info">
-                                <span class="category">Racing Equipment</span>
-                                <h4 class="product-title"><a href="#">Racing Equipment</a></h4>
-                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
-                                <div class="price"><span class="new-price">$35.00</span></div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="load-more-container">
-                        <button class="load-more-btn">Load more ...</button>
-                    </div>
-                </div>
-
-                <!-- Sidebar (Right) -->
+                <!-- Sidebar (Left, moved per user request) -->
                 <div class="shop-sidebar">
                     
                     <!-- Categories -->
@@ -391,6 +195,210 @@
                     </div>
 
                 </div>
+                
+                <!-- Product Grid (Right) -->
+                <div class="shop-products">
+                    <div class="products-grid-5">
+                       
+                        <!-- Product 1 -->
+                        <div class="product-card">
+                            <div class="product-img"><a href="product-details.html"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></a></div>
+                            <div class="product-info">
+                                <span class="category">Brakes</span>
+                                <h4 class="product-title"><a href="product-details.html">2-Piece Slotted Big Brake Kit</a></h4>
+                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
+                                <div class="price"><span class="new-price">$25.00</span></div>
+                            </div>
+                        </div>
+
+                         <!-- Product 2 -->
+                         <div class="product-card">
+                            <span class="badge badge-sale">-23%</span>
+                            <div class="product-img"><a href="product-details.html"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></a></div>
+                            <div class="countdown-timer">344 : 15 : 06 : 46</div>
+                            <div class="product-info">
+                                <span class="category">Wheels & Tires</span>
+                                <h4 class="product-title"><a href="product-details.html">Cooper Zeon Tires</a></h4>
+                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
+                                <div class="price"><span class="old-price">$90.00</span> <span class="new-price">$69.00</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="product-card">
+                             <span class="badge badge-sale">-35%</span>
+                            <div class="product-img"><a href="product-details.html"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></a></div>
+                            <div class="countdown-timer">344 : 15 : 06 : 46</div>
+                            <div class="product-info">
+                                <span class="category">Custom Wheels</span>
+                                <h4 class="product-title"><a href="product-details.html">Crystal Blue with Machined Face</a></h4>
+                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
+                                <div class="price"><span class="old-price">$60.00</span><span class="new-price">$39.00</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                         <div class="product-card">
+                             <span class="badge badge-sale">-17%</span>
+                            <div class="product-img"><a href="product-details.html"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></a></div>
+                             <div class="countdown-timer">344 : 15 : 06 : 46</div>
+                            <div class="product-info">
+                                <span class="category">Custom Wheels</span>
+                                <h4 class="product-title"><a href="product-details.html">Custom Wheels Gold RTS</a></h4>
+                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
+                                <div class="price"><span class="old-price">$95.00</span><span class="new-price">$79.00</span></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 5 -->
+                        <div class="product-card">
+                             <span class="badge badge-sale">-22%</span>
+                            <div class="product-img"><a href="product-details.html"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></a></div>
+                             <div class="countdown-timer">344 : 15 : 06 : 46</div>
+                            <div class="product-info">
+                                <span class="category">Custom Hoods</span>
+                                <h4 class="product-title"><a href="product-details.html">Duraflex Fiberglass Hood</a></h4>
+                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
+                                <div class="price"><span class="old-price">$50.00</span><span class="new-price">$39.00</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="product-card">
+                            <div class="product-img"><a href="product-details.html"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></a></div>
+                             <div style="height: 25px;"></div>
+                            <div class="product-info">
+                                <span class="category">Detailing & Care</span>
+                                <h4 class="product-title"><a href="product-details.html">Electric Pressure Washer</a></h4>
+                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
+                                <div class="price"><span class="new-price">$50.00</span></div>
+                            </div>
+                        </div>
+
+                         <div class="product-card">
+                            <div class="product-img"><a href="product-details.html"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></a></div>
+                             <div style="height: 25px;"></div>
+                            <div class="product-info">
+                                <span class="category">Seats</span>
+                                <h4 class="product-title"><a href="product-details.html">Elite-X Sport Seats</a></h4>
+                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
+                                <div class="price"><span class="new-price">$60.00</span></div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-img"><a href="product-details.html"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></a></div>
+                             <div style="height: 25px;"></div>
+                            <div class="product-info">
+                                <span class="category">Engine Covers</span>
+                                <h4 class="product-title"><a href="product-details.html">Gloss Caliper Covers</a></h4>
+                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
+                                <div class="price"><span class="new-price">$80.00</span></div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                             <span class="badge badge-sale">-16%</span>
+                            <div class="product-img"><a href="product-details.html"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></a></div>
+                             <div class="countdown-timer">344 : 15 : 06 : 46</div>
+                            <div class="product-info">
+                                <span class="category">Custom Wheels</span>
+                                <h4 class="product-title"><a href="product-details.html">Gunmetal with Machined Face</a></h4>
+                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
+                                <div class="price"><span class="old-price">$70.00</span><span class="new-price">$59.00</span></div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                             <span class="badge badge-sale">-21%</span>
+                            <div class="product-img"><a href="product-details.html"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></a></div>
+                             <div class="countdown-timer">344 : 15 : 06 : 46</div>
+                            <div class="product-info">
+                                <span class="category">Custom Fog Lights</span>
+                                <h4 class="product-title"><a href="product-details.html">Halo Projector Fog</a></h4>
+                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
+                                <div class="price"><span class="old-price">$75.00</span><span class="new-price">$59.00</span></div>
+                            </div>
+                        </div>
+
+                         <!-- Row 3 -->
+                        <div class="product-card">
+                             <span class="badge badge-sale">-27%</span>
+                            <div class="product-img"><a href="product-details.html"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></a></div>
+                             <div class="countdown-timer">344 : 15 : 06 : 46</div>
+                            <div class="product-info">
+                                <span class="category">Factory Headlights</span>
+                                <h4 class="product-title"><a href="product-details.html">Halogen Side Lightling</a></h4>
+                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
+                                <div class="price"><span class="old-price">$45.00</span><span class="new-price">$33.00</span></div>
+                            </div>
+                        </div>
+
+                         <div class="product-card">
+                             <span class="badge badge-sale">-25%</span>
+                            <div class="product-img"><a href="product-details.html"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></a></div>
+                             <div class="countdown-timer">344 : 15 : 06 : 46</div>
+                            <div class="product-info">
+                                <span class="category">Brakes</span>
+                                <h4 class="product-title"><a href="product-details.html">Imola Series Drilled and Slotted Brake</a></h4>
+                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
+                                <div class="price"><span class="old-price">$65.00</span><span class="new-price">$49.00</span></div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-img"><a href="product-details.html"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></a></div>
+                             <div style="height: 25px;"></div>
+                            <div class="product-info">
+                                <span class="category">Lowering Kits</span>
+                                <h4 class="product-title"><a href="product-details.html">Lowering Kits</a></h4>
+                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
+                                <div class="price"><span class="new-price">$75.00</span></div>
+                            </div>
+                        </div>
+
+                         <div class="product-card">
+                             <span class="badge badge-sale">-13%</span>
+                            <div class="product-img"><a href="product-details.html"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></a></div>
+                             <div class="countdown-timer">344 : 15 : 06 : 46</div>
+                            <div class="product-info">
+                                <span class="category">Factory Headlights</span>
+                                <h4 class="product-title"><a href="product-details.html">Projector Headlights</a></h4>
+                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
+                                <div class="price"><span class="old-price">$45.00</span><span class="new-price">$39.00</span></div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-img"><a href="product-details.html"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></a></div>
+                             <div style="height: 25px;"></div>
+                            <div class="product-info">
+                                <span class="category">Custom Fog Lights</span>
+                                <h4 class="product-title"><a href="product-details.html">Projector LED Fog Lights</a></h4>
+                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
+                                <div class="price"><span class="new-price">$25.00</span></div>
+                            </div>
+                        </div>
+
+                         <!-- Row 4 (Partial, just one item) -->
+                        <div class="product-card">
+                            <div class="product-img"><a href="product-details.html"><img src="assets/images/products/absorber.png" alt="Product" style="max-height: 120px;"></a></div>
+                             <div style="height: 25px;"></div>
+                            <div class="product-info">
+                                <span class="category">Racing Equipment</span>
+                                <h4 class="product-title"><a href="product-details.html">Racing Equipment</a></h4>
+                                <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
+                                <div class="price"><span class="new-price">$35.00</span></div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="load-more-container">
+                        <button class="load-more-btn">Load more ...</button>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -398,32 +406,37 @@
     </main>
 
     <!-- Footer -->
+        <!-- Footer (Standard) -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-top">
-                <div class="footer-col">
-                    <div class="footer-logo" style="margin-bottom: 20px;">
-                        <a href="index.html"><img src="assets/images/logos/LOGO JOM KAKI.png" alt="JOM KAKI MOTOR" style="max-height: 60px; background:white; padding: 5px; border-radius: 4px;"></a>
+                <div class="footer-col footer-contact">
+                    <div class="footer-logo">
+                        <a href="index.html"><img src="assets/images/logos/LOGO JOM KAKI.png" alt="JOM KAKI MOTOR"></a>
                     </div>
                     <div class="contact-info">
                         <div class="icon-text">
-                             <i class="fas fa-headset text-primary" style="font-size:2.5rem;"></i>
-                            <div><small>Got Question</small><strong style="font-size: 1.2rem;">1900 0012 333</strong></div>
+                            <i class="fas fa-headset"></i>
+                            <div class="text">
+                                <small>Got Question</small>
+                                <strong>1900 0012 333</strong>
+                            </div>
                         </div>
                         <p class="address">Calista Wise 7292 Dictum Av.<br>Antonio, Italy.</p>
                     </div>
                 </div>
-                <!-- ... other cols ... -->
+
                 <div class="footer-col">
                     <h4>Support</h4>
                     <ul>
                         <li><a href="#">Privacy & Cookies</a></li>
                         <li><a href="#">Store Directory</a></li>
                         <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                 <div class="footer-col">
+
+                <div class="footer-col">
                     <h4>Social</h4>
                     <ul>
                         <li><a href="#">Facebook</a></li>
@@ -432,27 +445,30 @@
                         <li><a href="#">Instagram</a></li>
                     </ul>
                 </div>
-                 <div class="footer-col">
+
+                <div class="footer-col footer-newsletter">
                     <h4>Newsletter</h4>
-                    <p style="font-size: 0.85rem; color: #a0a0a0; margin-bottom: 20px;">Get the latest news & updates from us</p>
-                    <form style="display: flex; border-bottom: 1px solid #444; padding-bottom: 5px;">
-                        <input type="email" placeholder="Enter your email here" style="background: transparent; border: none; color: white; flex-grow: 1; outline: none; font-size: 0.85rem;">
-                        <button type="submit" style="background: transparent; border: none; color: #a0a0a0; font-weight: bold; cursor: pointer;">Subscribe</button>
+                    <p>Get the latest news & updates from us</p>
+                    <form>
+                        <input type="email" placeholder="Enter your email here">
+                        <button type="submit">Subscribe</button>
                     </form>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; NoteTheme - All Right reserved!</p>
-                <div class="footer-links">
-                    <a href="#">Privacy & Cookies</a>
-                    <a href="#">Terms & Conditions</a>
-                    <a href="#">Accessibility</a>
-                    <a href="#">Store Directory</a>
-                    <a href="#">About Us</a>
+                <div class="container">
+                    <p>&copy; 2024 JOMKAKIMOTOR - All Right reserved!</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy & Cookies</a>
+                        <a href="#">Terms & Conditions</a>
+                        <a href="#">Accessibility</a>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
+<script src="assets/js/mobile-nav.js"></script>
 </body>
 </html>

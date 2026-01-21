@@ -38,7 +38,153 @@
     align-items: center;
     justify-content: flex-start !important; /* Force start alignment */
     height: 100%;
-    padding: 0 20px; /* Force padding to match global container */
+    padding: 0; /* Remove horizontal padding so the "Browse Categories" touches the edge of the container box strictly */
+    max-width: 1550px; /* Ensure max-width is respected even if padding is gone, though usually padding is inside */
+    margin: 0 auto;
+}
+
+/* Adjust padding for the elements inside to compensate if needed, but Browse Categories typically sits flush left in these designs 
+   Actually, if the container has no padding, it will align with the global container's CONTENT box if global container has padding.
+   Wait, global container has padding: 0 20px. 
+   If I set this to padding: 0, it will extend 20px wider (on each side) than the content below.
+   BUT, the user says "Browse categories ... even further left". 
+   If previously it had padding: 0 20px, it started at 20px + [container margin].
+   If the user thinks it's too far RIGHT, then removing padding is the way to move it LEFT.
+   Let's check the container definition again.
+   .container { padding: 0 20px; margin: 0 auto; }
+   So content starts 20px from the container edge.
+   If I change nav .container to padding: 0, content starts at 0px from container edge.
+   This moves "Browse Categories" 20px to the LEFT.
+   This seems to be what the user wants ("even further left").
+*/
+
+/* Re-apply the container override correctly */
+.main-nav .container {
+    padding: 0; /* FLUSH LEFT for the bar elements */
+    width: 100%;
+    max-width: 1550px;
+    margin: 0 auto;
+    display: flex; /* flex layout */
+    align-items: center;
+}
+
+/* But wait, if I remove padding from the nav container, the "Search" on the right will also move 20px to the RIGHT (touching the edge).
+   We need to ensure content alignment. 
+   The body content uses .container (with 20px padding).
+   The sidebar is inside .section-hero .container .hero-layout .vehicle-filter-wrapper.
+   So sidebar starts at 20px.
+   
+   If I remove padding from Nav Container, "Browse Categories" starts at 0px.
+   So "Browse Categories" will be 20px to the LEFT of the Sidebar.
+   The user said "aligned with the vegicle filter box below it".
+   
+   Wait. "The 'browse categories' i need i them to be even further left... aligned with the vegicle filter box below it."
+   This implies currently "Browse Categories" is to the RIGHT of the filter box?
+   
+   How is that possible?
+   Only if `.cat-menu` has a margin-left.
+   Or... `justify-content` was `center`? No, I forced `flex-start`.
+   
+   Let's look at the `cat-menu` style:
+   padding: 0 25px;
+   
+   Ah! The `cat-menu` itself has padding!
+   25px padding on the left.
+   So the TEXT "Browse Categories" starts at 20px (container) + 25px (cat-menu padding) = 45px.
+   The Filter Box likely has standard padding inside, but the BOX itself starts at 20px.
+   
+   The user sees the BLACK BOX of "Browse Categories".
+   They probably want the BLACK BOX to align with the WHITE BOX of the filter.
+   Both Boxes start at the parent container edge.
+   
+   If both parents have padding: 0 20px.
+   Then both boxes start at 20px.
+   They should be aligned.
+   
+   UNLESS the filter box has a negative margin to stick out?
+   Or the Nav Bar is full width?
+   
+   Let's consider the user's phrase "even further left".
+   Maybe they simply want the whole column to shift left?
+   
+   Wait, look at the visual evidence provided by the user in the previous turn ("This is the result"). 
+   In that screenshot (orange header), the "Browse Categories" black box IS aligned with the white "Select Your Vehicle" box below it.
+   Visually they look aligned.
+   
+   BUT the user says "The 'browse categories' i need i them to be even further left".
+   Maybe they mean the *content* of the menu?
+   
+   Let's look at the "Collision" remark.
+   "The hero banner and the vehicle filter box colide with each other."
+   
+   Maybe the issue is `width: 270px` is too wide for the space or the gap is ignored because of `box-sizing`.
+   
+   I've added `box-sizing: border-box`. That should fix the collision if width+padding was exceeding 270px.
+   
+   What if I remove the padding from the container in `.main-nav` AND add a `margin-left` to the `.cat-menu` to explicitly match?
+   
+   Actually, looking at `global.css`, `.container` has `padding: 0 20px`.
+   So the content width is `100% - 40px`.
+   
+   If I modify `.main-nav .container` to have `padding: 0 20px` (which it was), the black box starts at 20px.
+   
+   Let's try to increase the Gap in `home.css` style just in case collision is spatial.
+   And verify `vehicle-filter-wrapper` styles.
+   
+   One possibility: The container max-width is 1550px.
+   If the user is on a smaller screen, 1550px doesn't matter, it's 100%.
+   
+   Let's just apply `box-sizing` first. That is huge.
+   Before `box-sizing: border-box`, if `vehicle-filter-wrapper` had `width: 270px` and padding (if any), it would be > 270px.
+   The `.vehicle-filter-box` has `padding: 30px` and `width: 100%`.
+   So `.vehicle-filter-box` actual width was `100% + 60px`.
+   Since `vehicle-filter-wrapper` is `270px`, the box inside was `270px + 60px = 330px`.
+   That 60px excess would bleed out to the right -> colliding with the banner.
+   
+   Adding `box-sizing: border-box` fixes this immediately! The padding will be included in the 100% width.
+   
+   Now about the "Browse Categories" alignment.
+   If the layout was broken (bleeding 60px to the right), maybe the user perception of alignment was skewed.
+   Or maybe they want the "Browse Categories" to be wider to match the *actual* width of the filter box (which was 330px).
+   
+   No, they said "further left".
+   
+   If `box-sizing` fixes the width of the filter box back to 270px.
+   Then the "Browse Categories" (270px) and Filter Box (270px) will be same width.
+   They should stack perfectly.
+   
+   I'm confident `box-sizing` is the key fix for collision.
+   
+   For the "Browse Categories" "further left"... 
+   Maybe the user wants the "Browse Categories" to ignore the container padding and touch the screen edge? 
+   No, "aligned with the vehicle filter box below it".
+   
+   If `box-sizing` was default (content-box):
+   The filter box was 330px wide.
+   The header box was 270px wide (if it defined width) or padded.
+   
+   I will simply apply the box-sizing fix. This solves the collision fundamentally. 
+   I will also tweak the `.cat-menu` width to be consistent if needed.
+   
+   In `components.css`: `.cat-menu { width: 270px; ... }`
+   In `home.css`: `.vehicle-filter-wrapper { width: 270px; ... }`
+   
+   They are defined as equal.
+   So with `box-sizing: border-box`, they will be identical.
+   
+   I'll just confirm `box-sizing` is added to `global.css` (done).
+   
+   I should also check if `home.css` needs any margin adjustment.
+   I'll update `home.css` to ensure the sidebar definitely doesn't grow.
+*/
+
+/* I will revert the change to components.css first, as I don't want to mess up the container padding if it's just box-sizing */
+.main-nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start !important;
+    height: 100%;
+    padding: 0 20px; /* Keep consistent with body container */
 }
 
 .cat-menu {
@@ -62,7 +208,8 @@
     flex-grow: 0; /* Don't grow to fill space */
     display: flex;
     height: 100%;
-    margin-right: auto; /* Push everything else right? No, we want links left. */
+    /* margin-right: auto; Removed to ensure links stay next to categories */
+    margin-left: 0;
 }
 .nav-links a {
     color: white;
@@ -479,3 +626,19 @@
 .footer-links a:hover { color: white; }
 
 /* Utilities for preview - MOVED TO elements_page.css */
+/* Added Header Icons Spacing */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Proper spacing */
+}
+.header-icons a {
+    color: #333;
+    font-size: 1.2rem;
+    position: relative;
+    transition: color 0.3s;
+}
+.header-icons a:hover {
+    color: var(--primary-color);
+}
+
