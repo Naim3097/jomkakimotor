@@ -1,0 +1,427 @@
+/* 
+   responsive.css 
+   Consolidated Mobile Optimization Styles 
+   Loaded LAST to override all other styles.
+*/
+
+/* Global Mobile Fixes */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Mobile Menu Toggle Styling */
+.mobile-menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: #333; /* Dark color for visibility in white header if moved there, or white if in nav */
+    cursor: pointer;
+    margin-right: 15px;
+    padding: 10px;
+    order: 3;
+}
+
+/* Overlay for Mobile Menu */
+.mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+.mobile-menu-overlay.active {
+    display: block;
+}
+
+/* Mobile Close Button */
+.mobile-menu-close {
+    display: block;
+    text-align: right;
+    padding: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+    border-bottom: 1px solid #eee;
+}
+
+/* =========================================
+   Tablet & Mobile Layouts (max-width: 991px)
+   ========================================= */
+@media (max-width: 991px) {
+    
+    /* --- Header Middle (FLOZEN Style Match) --- */
+    .header-middle .container {
+        display: grid;
+        grid-template-columns: 50px 1fr 50px; /* Hamburger, Logo, Icons */
+        align-items: center;
+        padding: 15px;
+        gap: 0;
+    }
+
+    /* 1. Hamburger (Left) */
+    .mobile-menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 1.5rem;
+        color: #333;
+        grid-column: 1;
+        position: static; /* Reset absolute */
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 2. Logo (Center) */
+    .header-middle .logo {
+        grid-column: 2;
+        text-align: center;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .header-middle .logo img {
+        max-height: 35px; /* Clean mobile height */
+    }
+
+    /* 3. Icons (Right) */
+    .header-icons {
+        grid-column: 3;
+        justify-content: flex-end;
+        width: auto;
+        margin: 0;
+        display: flex;
+        gap: 15px;
+    }
+    .header-icons a {
+        font-size: 1.2rem;
+        color: #333;
+    }
+    /* Hide extra icons if crowded */
+    .header-icons .fa-heart {
+        display: none; 
+    }
+    /* Keep Search and Bag */
+
+    .hotline, .header-search { 
+        display: none; /* Hide desktop search/hotline */
+    }
+
+    /* --- Navigation Bar (Drawer) --- */
+    .main-nav {
+        display: none; /* Logic handled by toggle */
+    }
+
+    .nav-links {
+        padding-top: 60px; /* Space for close button */
+        background: #fff;
+        width: 300px; /* Specific width */
+    }
+    
+    /* Drawer Header / Close Button Area */
+    .mobile-menu-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        background: #f9f9f9;
+        padding: 15px 20px;
+        text-align: right;
+        color: #333;
+        font-weight: 600;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .mobile-menu-close::before {
+        content: "MENU"; /* Add Title */
+    }
+    .mobile-menu-close i {
+        font-size: 1.2rem;
+    }
+
+    /* Menu Items */
+    .nav-links a {
+        padding: 15px 25px;
+        border-bottom: 1px solid #f1f1f1;
+        font-size: 0.95rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    /* Add Plus icons via CSS for top level items */
+    .nav-links a:after {
+        content: "+";
+        font-weight: bold;
+        color: #ccc;
+    }
+    .nav-links a.active {
+        color: var(--primary-color);
+    }
+
+}
+
+    /* --- Home: Hero --- */
+    .hero-layout {
+        flex-direction: column;
+    }
+    .vehicle-filter-wrapper {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+    .hero-banner-wrapper {
+        width: 100% !important;
+    }
+    .hero-slide {
+        padding: 40px 20px !important;
+        flex-direction: column-reverse;
+        min-height: auto;
+        text-align: center;
+    }
+    .hero-slide h1 {
+        font-size: 2rem !important;
+    }
+    .hero-image-container {
+        margin-bottom: 20px;
+    }
+    .hero-image-container img {
+        max-height: 200px !important;
+    }
+
+    /* --- Home: Grids --- */
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px;
+    }
+    .products-grid-4, .top-lists-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* --- Home: Deal of Day --- */
+    .deal-content {
+        display: flex;
+        flex-direction: column;
+    }
+    .deal-products, .deal-banner-image {
+        width: 100% !important;
+        border-left: none;
+        border-top: 1px solid #eee;
+    }
+
+    /* --- Shop Page & Cart Fixes --- */
+    .shop-layout {
+        flex-direction: column;
+    }
+    .shop-sidebar {
+        width: 100% !important;
+        margin-bottom: 30px;
+        order: -1; /* Filter First? Users usually like filtering first, but it takes space. Collapsible is best. */
+    }
+    /* Simple Collapse for Sidebar Widgets on Mobile */
+    .sidebar-widget .widget-title {
+        background: #f9f9f9;
+        padding: 10px 15px;
+        border: 1px solid #eee;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .sidebar-widget ul, .sidebar-widget .tag-cloud {
+        /* display: none;  Optional: Hide by default */
+        padding: 15px;
+        border: 1px solid #eee;
+        border-top: none;
+    }
+
+    .shop-vehicle-filter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    /* --- Cart Page Mobile --- */
+    /* Transform Table to Cards */
+    .cart-table {
+        display: block; 
+        border: none;
+    }
+    .cart-table thead {
+        display: none; /* Hide headers */
+    }
+    .cart-table tbody {
+        display: block;
+    }
+    .cart-table tr {
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid #eee;
+        margin-bottom: 15px;
+        position: relative;
+        padding: 15px;
+        background: #fff;
+        border-radius: 8px;
+    }
+    .cart-table td {
+        border: none !important;
+        padding: 5px !important;
+    }
+    
+    /* Product Image */
+    .cart-table td:first-child { 
+         display: none; /* Hide remove icon usually in first col, if not adjust logic */
+    }
+    /* If first child is image, use nth-child(2) etc. Assuming structure: Remove | Image | Name | Price | Qty | Total */
+    
+    .cart-table td.product-thumbnail { 
+        width: 80px;
+        height: 80px;
+        display: block;
+    }
+    .cart-table td.product-thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Product Name */
+    .cart-table td.product-name {
+        width: calc(100% - 100px);
+        font-weight: 600;
+        font-size: 1rem;
+        display: block;
+    }
+    .cart-table td.product-price, 
+    .cart-table td.product-subtotal {
+        width: 50%;
+        font-size: 0.9rem;
+        color: #666;
+        display: inline-block;
+    }
+    .cart-table td.product-quantity {
+        width: 100%;
+        margin-top: 10px;
+        display: block;
+    }
+    
+    .cart-actions {
+        flex-direction: column;
+        gap: 10px;
+        display: flex;
+    }
+    .cart-totals {
+        width: 100% !important;
+    }
+
+    .filter-group {
+        flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 10px;
+    }
+    .filter-group .step-num {
+        align-self: flex-start;
+        margin-bottom: 5px;
+    }
+    .shop-controls {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    /* --- Footer --- */
+    .site-footer .footer-top {
+        flex-direction: column;
+    }
+    .footer-bottom .container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .footer-links a {
+        margin: 0 10px;
+    }
+}
+
+/* =========================================
+   Mobile Phones (max-width: 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* --- Product Details --- */
+    .product-detail-wrapper {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+    .product-gallery {
+        flex-direction: column-reverse; /* Thumbs below */
+    }
+    .gallery-thumbs {
+        flex-direction: row;
+        width: 100%;
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+    .thumb-item {
+        flex-shrink: 0;
+        margin-right: 10px;
+    }
+    .tabs-header {
+        flex-direction: column;
+    }
+    .tabs-header .tab-btn {
+        width: 100%;
+        text-align: left;
+    }
+
+    /* --- Contact Page --- */
+    .contact-layout {
+        grid-template-columns: 1fr !important;
+        gap: 40px;
+    }
+    .contact-info-area {
+        padding-left: 0 !important;
+        border-left: none !important;
+        border-top: 1px solid #eee;
+        padding-top: 30px;
+    }
+    .form-row-2 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* --- Login/Register --- */
+    .login-register-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+/* =========================================
+   Small Phones (max-width: 576px)
+   ========================================= */
+@media (max-width: 576px) {
+    /* --- Grids --- */
+    .features-grid {
+        grid-template-columns: 1fr !important; /* Icons stacked */
+    }
+    .products-grid-4, .top-lists-grid {
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 Columns for Products */
+        gap: 10px; /* Tighter gap */
+    }
+    
+    /* --- Top Bar --- */
+    .top-bar {
+        display: none; 
+    }
+
+    /* Cart Layout already handled in <991px block, do not override with scroll here */
+    
+    /* --- General Container Padding --- */
+    .container {
+        padding: 0 15px;
+    }
+}
