@@ -32,6 +32,11 @@
         <!-- Header Middle -->
         <div class="header-middle">
             <div class="container flex-between">
+                <!-- Hamburger Menu for Mobile -->
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+
                 <div class="hotline">
                     <i class="fas fa-headset fa-2x"></i>
                     <div class="hotline-text">
@@ -615,25 +620,80 @@
     </footer>
 
     <script>
-        // Hero Slider Logic
-        const slides = document.querySelectorAll('.hero-slide');
+        // Hero Slider Logic (Smooth Slide)
+        const track = document.getElementById('heroSlider');
+        const slides = track.querySelectorAll('.hero-slide');
         let currentSlide = 0;
         const totalSlides = slides.length;
 
-        function showNextSlide() {
-            // Remove active class from current
-            slides[currentSlide].classList.remove('active');
-            
-            // Calculate next index
-            currentSlide = (currentSlide + 1) % totalSlides;
-            
-            // Add active class to next
-            slides[currentSlide].classList.add('active');
-        }
+        // Ensure track width fits all slides (500% for 5 slides)
+        track.style.width = `${totalSlides * 100}%`;
+        slides.forEach(slide => {
+            slide.style.width = `${100 / totalSlides}%`;
+            slide.style.display = 'flex'; // Ensure visible for Flex layout
+            slide.classList.remove('active'); // Remove old class logic
+        });
 
-        // Auto slide every 5 seconds
+        function showNextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            track.style.transform = `translateX(-${currentSlide * (100 / totalSlides)}%)`;
+        }
+        
+        // Auto slide
         setInterval(showNextSlide, 5000);
+
+        // Brands Marquee Logic
+        const brandWrapper = document.querySelector('.brands-wrapper');
+        if(brandWrapper) {
+            // Clone items for seamless scrolling
+            brandWrapper.innerHTML += brandWrapper.innerHTML;
+            
+            // Add Styles dynamically or via class
+            brandWrapper.style.display = 'flex';
+            brandWrapper.style.overflow = 'hidden';
+            
+            let scrollAmount = 0;
+            function autoScrollBrands() {
+                scrollAmount += 1;
+                // Reset if scrolled half (cloned set)
+                if (scrollAmount >= brandWrapper.scrollWidth / 2) {
+                    scrollAmount = 0;
+                }
+                brandWrapper.scrollTo(scrollAmount, 0);
+                requestAnimationFrame(autoScrollBrands);
+            }
+            // Use CSS Animation preferred for performance, but JS requested for "auto-scroll".
+            // Actually CSS Marquee is better. Let's start a simpler interaction.
+        }
     </script>
+<style>
+    /* Marquee Animation Support */
+    @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    .brands-wrapper {
+        display: flex;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .brands-wrapper .brand-item {
+        flex-shrink: 0;
+        animation: marquee 15s linear infinite;
+        /* Need to ensure wrapper has cloned items for this to work perfectly */
+    }
+    /* Disable animation on hover? */
+    .brands-wrapper:hover .brand-item {
+        animation-play-state: paused;
+    }
+</style>
+<script>
+    // Duplicate brands for CSS marquee
+    const bWrapper = document.querySelector('.brands-wrapper');
+    if(bWrapper) {
+       bWrapper.innerHTML += bWrapper.innerHTML; // Duplicate once
+    }
+</script>
 <script src="assets/js/mobile-nav.js"></script>
 </body>
 </html>

@@ -43,40 +43,12 @@ document.addEventListener('DOMContentLoaded', function() {
         closeBtn.addEventListener('click', closeMenu);
         overlay.addEventListener('click', closeMenu);
         
-        // Close when clicking a link
+        // Close when clicking a link (optional, good for single page apps, but harmless here)
         const links = navLinks.querySelectorAll('a');
         links.forEach(link => {
             link.addEventListener('click', closeMenu);
         });
-
-        // ---------------------------------------------------------
-        // FEATURE: Move Top Bar Links to Mobile Menu (Bottom)
-        // ---------------------------------------------------------
-        const topLinks = document.querySelector('.top-links');
-        if (topLinks) {
-            const mobileTopLinks = topLinks.cloneNode(true);
-            mobileTopLinks.className = 'mobile-extra-links';
-            
-            // Apply styles via JS or class
-            mobileTopLinks.style.display = 'flex';
-            mobileTopLinks.style.flexDirection = 'column';
-            mobileTopLinks.style.marginTop = '20px';
-            mobileTopLinks.style.borderTop = '1px solid #eee';
-            
-            // Adjust links style
-            const extraLinks = mobileTopLinks.querySelectorAll('a');
-            extraLinks.forEach(link => {
-                link.style.padding = '15px 25px';
-                link.style.borderBottom = '1px solid #f1f1f1';
-                link.style.color = '#666';
-                link.style.fontSize = '0.9rem';
-                // Add icons if missing (optional)
-            });
-
-            navLinks.appendChild(mobileTopLinks);
-        }
     }
-
 
     // Also close menu when clicking outside
     document.addEventListener('click', function(event) {

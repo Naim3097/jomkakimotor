@@ -48,7 +48,7 @@
 }
 
 .hero-slide {
-    min-width: 100%;
+    /* min-width: 100%; REMOYED - Causes sizing issues with JS slider width calculation */
     /* Existing hero-banner styles moved here */
     background: url('../images/banners/gray-abstract-textured-background.jpg.jpeg') center center/cover no-repeat; 
     padding: 0 60px;
