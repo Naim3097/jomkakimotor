@@ -1,0 +1,364 @@
+/* Global Styles (Header, Footer, Reset, Typography) */
+:root {
+    --primary-color: #ea5b0c; /* Updated Orange/Red per user info */
+    --secondary-color: #2b2d42; /* Dark Blue/Grey */
+    --text-color: #333;
+    --light-gray: #f4f4f4;
+    --border-color: #e5e5e5;
+    --success-color: #28a745; 
+    --warning-color: #ffc107;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Assuming modern font */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: var(--text-color);
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+/* Fix for footer in global */
+footer {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    text-align: left;
+}
+
+/* Common Utilities */
+.text-primary { color: var(--primary-color); }
+.bg-primary { background-color: var(--primary-color); color: white; }
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+    text-decoration: none;
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+}
+/* Removed legacy header/footer styles that caused black gaps */
+.btn-primary:hover {
+    background-color: #d90429;
+}
+
+.container {
+    max-width: 1550px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* Header Dropdown */
+.dropdown-parent:hover .dropdown-menu { display: block !important; }
+
+/* --- New Footer Styles --- */
+.site-footer {
+    background-color: #2b2d42; /* Dark background */
+    color: #b0b0b0;
+    padding-top: 70px;
+    margin-top: 80px;
+    font-size: 0.9rem;
+}
+.site-footer .footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+.site-footer .footer-col {
+    flex: 1;
+    min-width: 220px;
+    margin-bottom: 40px;
+    padding-right: 20px;
+}
+.site-footer .footer-logo img {
+    max-height: 50px;
+    background: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-bottom: 25px;
+}
+.site-footer h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.site-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.site-footer ul li {
+    margin-bottom: 12px;
+}
+.site-footer ul li a {
+    color: #b0b0b0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.site-footer ul li a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+
+/* Contact Info Column */
+.footer-contact .icon-text {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.footer-contact .icon-text i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-right: 15px;
+}
+.footer-contact .icon-text .text {
+    display: flex;
+    flex-direction: column;
+}
+.footer-contact .icon-text small {
+    font-size: 0.85rem;
+    color: #aaa;
+}
+.footer-contact .icon-text strong {
+    font-size: 1.2rem;
+    color: #fff;
+}
+.footer-contact .address {
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+/* Newsletter Column */
+.footer-newsletter p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+.footer-newsletter form {
+    display: flex;
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
+}
+.footer-newsletter input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    flex-grow: 1;
+    outline: none;
+    padding: 10px 0;
+    font-family: inherit;
+}
+.footer-newsletter button {
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+}
+.footer-newsletter button:hover {
+    color: #fff;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    background-color: #222433; /* Slightly darker */
+    padding: 25px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+.footer-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+.footer-links a {
+    color: #888;
+    margin-left: 25px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+}
+.footer-links a:hover {
+    color: #fff;
+}
+
+/* Responsive Footer */
+@media (max-width: 991px) {
+    .site-footer .footer-top {
+        flex-direction: column;
+    }
+    .footer-bottom .container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .footer-links a {
+        margin: 0 10px;
+    }
+}
+
+
+/* --- Responsive Mobile Optimization --- */
+
+/* Mobile Menu Toggle (Default Hidden) */
+.mobile-menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+    /* 1. Header Adjustments */
+    .header-middle .container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .header-middle .logo {
+        order: -1; /* Logo to top */
+        margin-bottom: 10px;
+    }
+    .hotline {
+        display: none; /* Hide hotline on mobile/tablet to save space, or move */
+    }
+    .header-icons {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    /* 2. Navigation */
+    .mobile-menu-toggle {
+        display: block; /* Show hamburger */
+    }
+    /* Hide desktop nav links by default handled via js or css hover? 
+       For simplicity, we'll stack them. */
+    .main-nav .container {
+        position: relative;
+        padding: 0 15px; /* Add padding back */
+    }
+    .nav-links {
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links a {
+        color: #333;
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+        width: 100%;
+    }
+    .cat-menu {
+        display: none; /* Hide separate cat menu button, merge into nav? Or keep? */
+    }
+    
+    /* 3. Hero Section */
+    .hero-layout {
+        flex-direction: column;
+    }
+    .vehicle-filter-wrapper {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .hero-banner-wrapper {
+        width: 100%;
+    }
+    .hero-slide {
+        padding: 40px 20px;
+        flex-direction: column-reverse; /* Image on top? or bottom? text first usually better */
+        min-height: auto;
+        text-align: center;
+    }
+    .hero-slide h1 {
+        font-size: 2rem;
+    }
+    .hero-image-container {
+        margin-bottom: 20px;
+    }
+    .hero-image-container img {
+        max-height: 200px;
+    }
+
+    /* 4. Feature Grid */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cols on tablet */
+    }
+    
+    /* 5. Product Grid */
+    .products-grid-4, .top-lists-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* 6. Deal of Day */
+    .deal-content {
+        display: flex; /* Fallback */
+        flex-direction: column;
+    }
+    .deal-products, .deal-banner-image {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid #eee;
+    }
+    
+    /* 7. Brands */
+    .brands-wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Mobile Phone Specific */
+    .features-grid {
+        grid-template-columns: 1fr; /* 1 col */
+    }
+    .products-grid-4, .top-lists-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .top-bar {
+        display: none; /* Hide top bar on very small screens */
+    }
+    
+    /* Cart Table Scroll */
+    .cart-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+

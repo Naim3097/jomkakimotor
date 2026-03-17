@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="brand" content="JOMKAKI GADGETS">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frequently Asked Questions - JOM KAKI MOTOR</title>
+    <title>Track Your Order - JOM KAKI GADGETS</title>
     <link rel="stylesheet" href="assets/css/global.css">
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');</style>
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/whatsapp-commerce.css">
 </head>
 <body>
 
@@ -17,7 +19,7 @@
     <header>
         <div class="top-bar">
             <div class="container flex-between">
-                <span>Welcome to JOMKAKIMOTOR Shopping Online Store!</span>
+                <span><a href="../index.html" style="color:#fff;font-weight:600;"><i class="fas fa-home"></i> JOMKAKI</a> &nbsp;|&nbsp; Welcome to JOMKAKI GADGETS Shopping Online Store!</span>
                 <div class="top-links">
                     <a href="#"><img src="https://flagcdn.com/16x12/us.png" alt="" style="margin-right: 5px; vertical-align: middle;"> English</a>
                     <a href="#">($) USD</a>
@@ -36,12 +38,12 @@
                     </div>
                 </div>
                 <div class="logo">
-                     <a href="index.html"><img src="assets/images/logos/LOGO JOM KAKI.png" alt="JOM KAKI MOTOR" style="max-height: 90px;"></a>
+                     <a href="index.html"><img src="assets/images/logos/LOGO JOM KAKI.png" alt="JOM KAKI GADGETS" style="max-height: 90px;"></a>
                 </div>
                 <div class="header-icons">
                     <a href="#"><i class="fas fa-search"></i></a>
                     <a href="#"><i class="far fa-heart"></i></a>
-                    <a href="cart.html" style="position: relative;">
+                     <a href="cart.html" style="position: relative;">
                         <i class="fas fa-shopping-bag"></i>
                         <span style="position: absolute; top: -8px; right: -8px; background: var(--primary-color); color: white; width: 18px; height: 18px; border-radius: 50%; font-size: 0.7rem; display: flex; align-items: center; justify-content: center;">0</span>
                     </a>
@@ -55,17 +57,29 @@
                 <div class="nav-links">
                     <a href="index.html">Home</a>
                     <a href="shop.html">Shop</a>
-                    <!-- Dropdown structure -->
+                    <a href="category.html">Categories</a>
+                    <a href="blog.html">Blog</a>
+                    <!-- Templates Dropdown -->
+                    <div style="position: relative; height: 100%; display: flex; align-items: center;" class="dropdown-parent">
+                        <a href="#" style="padding-right: 15px;">Templates <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
+                        <div class="dropdown-menu" style="position: absolute; top: 100%; left: 0; background: #fff; min-width: 200px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: none; z-index: 100;">
+                           <a href="product-template.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">Product Template</a>
+                           <a href="sales-page.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">Sales Page</a>
+                           <a href="category.html" style="color: #333; height: 40px; display: flex; align-items: center; padding-left: 15px;">Category Page</a>
+                        </div>
+                    </div>
+                    <!-- End Templates Dropdown -->
+                    <!-- Pages Dropdown -->
                     <div style="position: relative; height: 100%; display: flex; align-items: center;" class="dropdown-parent">
                         <a href="#" style="padding-right: 15px;">Pages <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
                         <div class="dropdown-menu" style="position: absolute; top: 100%; left: 0; background: #fff; min-width: 200px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: none; z-index: 100;">
-                           <a href="my-account.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee;">My Account</a>
-                           <a href="track-order.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee;">Order Tracking</a>
-                           <a href="faq.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee;">FAQ</a>
-                           <a href="contact.html" style="color: #333; height: 40px;">Contact Us</a>
+                           <a href="my-account.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">My Account</a>
+                           <a href="track-order.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">Order Tracking</a>
+                           <a href="faq.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">FAQ</a>
+                           <a href="contact.html" style="color: #333; height: 40px; display: flex; align-items: center; padding-left: 15px;">Contact Us</a>
                         </div>
                     </div>
-                    <!-- End Dropdown -->
+                    <!-- End Pages Dropdown -->
                 </div>
                 <div class="nav-search"><i class="fas fa-search"></i> Search</div>
             </div>
@@ -75,57 +89,29 @@
     <main>
         <div class="page-header">
             <div class="container">
-                <h1 class="page-title">Frequently Asked Questions</h1>
-                <div class="page-subtitle">Last Updated on December 31, 2018</div>
+                <h1 class="page-title">Track Your Order</h1>
+                <div class="page-subtitle">Enter your Order ID and Billing Email to track</div>
             </div>
         </div>
 
         <div class="container">
-            <div class="faq-section">
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        WHO SHOULD I TO CONTACT IF I HAVE QUESTION? <i class="fas fa-plus"></i>
+            <div class="tracking-wrapper">
+                <h3>Order Tracking</h3>
+                <p class="tracking-desc">To track your order please enter your Order ID in the box below and press the "Track" button. This was given to you on your receipt and in the confirmation email you should have received.</p>
+                <form action="#" class="page-form" style="text-align: left; max-width: 600px; margin: 0 auto;">
+                    <div class="form-group">
+                        <label class="form-label">Order ID</label>
+                        <input type="text" class="form-control" placeholder="Found in your order confirmation email.">
                     </div>
-                    <div class="faq-answer">
-                        <p>You can contact our support team via the Contact Us page or call our hotline.</p>
+                    <div class="form-group">
+                        <label class="form-label">Billing Email</label>
+                        <input type="email" class="form-control" placeholder="Email you used during checkout.">
                     </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        HOW CAN I CANCEL OR CHANGE MY ORDER? <i class="fas fa-plus"></i>
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button type="submit" class="btn btn-primary btn-full" style="max-width: 200px;">Track Order</button>
                     </div>
-                    <div class="faq-answer">
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        HOW CAN I RETURN A PRODUCT? <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Please refer to our return policy page for detailed instructions.</p>
-                    </div>
-                </div>
-                
-                 <div class="faq-item">
-                    <div class="faq-question">
-                        HOW LONG WILL IT TAKE TO GET MY PACKAGE? <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Standard shipping takes 3-5 business days. Express is 1-2 days.</p>
-                    </div>
-                </div>
-
+                </form>
             </div>
-
-             <div style="text-align: center; margin-bottom: 80px;">
-                <h2>Still Have Questions? Contact Us</h2>
-                <a href="contact.html" class="btn btn-primary" style="margin-top: 20px;">Contact Us</a>
-            </div>
-
         </div>
     </main>
 
@@ -136,7 +122,7 @@
             <div class="footer-top">
                 <div class="footer-col footer-contact">
                     <div class="footer-logo">
-                        <a href="index.html"><img src="assets/images/logos/LOGO JOM KAKI.png" alt="JOM KAKI MOTOR"></a>
+                        <a href="index.html"><img src="assets/images/logos/LOGO JOM KAKI.png" alt="JOM KAKI GADGETS"></a>
                     </div>
                     <div class="contact-info">
                         <div class="icon-text">
@@ -182,7 +168,7 @@
             
             <div class="footer-bottom">
                 <div class="container">
-                    <p>&copy; 2024 JOMKAKIMOTOR - All Right reserved!</p>
+                    <p>&copy; 2024 JOMKAKIGADGETS - All Right reserved!</p>
                     <div class="footer-links">
                         <a href="#">Privacy & Cookies</a>
                         <a href="#">Terms & Conditions</a>
@@ -196,22 +182,8 @@
     <style>
     .dropdown-parent:hover .dropdown-menu { display: block !important; }
     </style>
-    
-    <script>
-        // Simple FAQ Toggle Script
-        document.querySelectorAll('.faq-question').forEach(item => {
-            item.addEventListener('click', event => {
-                const answer = item.nextElementSibling;
-                item.classList.toggle('active');
-                if (item.classList.contains('active')) {
-                    answer.classList.add('open');
-                } else {
-                    answer.classList.remove('open');
-                }
-            })
-        })
-    </script>
 
 <script src="assets/js/mobile-nav.js"></script>
+<script src="assets/js/whatsapp-commerce.js"></script>
 </body>
 </html>

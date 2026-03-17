@@ -1,0 +1,470 @@
+/* =============================================
+   GADGETS - Sales / Landing Page Styles
+   Conversion-focused, tech-themed design
+   ============================================= */
+
+/* --- Minimal Landing Nav Override --- */
+.landing-header {
+    background: #fff;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+    padding: 15px 0;
+}
+.landing-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.landing-header .brand-logo img {
+    max-height: 50px;
+}
+.landing-header .header-cta {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.landing-header .header-cta:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(14,165,233,0.3);
+}
+
+/* --- Hero Banner --- */
+.sales-hero {
+    padding: 100px 0 80px;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+.sales-hero::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(14,165,233,0.1), transparent 70%);
+    top: -200px;
+    right: -100px;
+    pointer-events: none;
+}
+.sales-hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+.sales-hero .hero-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.12;
+    margin-bottom: 18px;
+    letter-spacing: -1px;
+}
+.sales-hero .hero-content h1 .highlight {
+    color: var(--primary-color);
+}
+.sales-hero .hero-content .hero-subtitle {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+.sales-hero .hero-content .hero-price-tag {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+.hero-price-tag .current-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+.hero-price-tag .was-price {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.35);
+    text-decoration: line-through;
+}
+.hero-price-tag .save-badge {
+    background: #ef4444;
+    color: #fff;
+    padding: 5px 14px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.sales-hero .hero-cta-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.btn-cta-primary {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 16px 45px;
+    border: none;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s;
+    letter-spacing: 0.3px;
+}
+.btn-cta-primary:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(14,165,233,0.3);
+}
+.btn-cta-whatsapp {
+    background: #25D366;
+    color: #fff;
+    padding: 16px 45px;
+    border: none;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+.btn-cta-whatsapp:hover {
+    background: #1da851;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(37,211,102,0.3);
+}
+.btn-cta-whatsapp i {
+    margin-right: 8px;
+}
+.sales-hero .hero-image {
+    text-align: center;
+}
+.sales-hero .hero-image .img-placeholder {
+    width: 100%;
+    max-width: 480px;
+    height: 420px;
+    background: rgba(255,255,255,0.03);
+    border: 2px dashed rgba(255,255,255,0.1);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.2);
+    margin: 0 auto;
+}
+
+/* --- Urgency / Trust Bar --- */
+.urgency-bar {
+    background: linear-gradient(90deg, #e0f2fe, #f0f9ff);
+    padding: 12px 0;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #0369a1;
+    font-weight: 600;
+}
+.urgency-bar i {
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+/* --- Trust Badges --- */
+.trust-badges {
+    padding: 40px 0;
+    background: #fff;
+}
+.badges-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+.trust-badge {
+    padding: 20px;
+}
+.trust-badge .badge-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+.trust-badge h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 5px;
+}
+.trust-badge p {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* --- Benefits / Features Section --- */
+.benefits-section {
+    padding: 70px 0;
+    background: #f8fafc;
+}
+.benefits-section .section-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+.benefits-section .section-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+.benefits-section .section-header p {
+    color: #64748b;
+    font-size: 1rem;
+}
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+.benefit-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 35px 25px;
+    text-align: center;
+    border: 1px solid #f1f5f9;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.benefit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+.benefit-card .benefit-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #e0f2fe, #f0f9ff);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+.benefit-card h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+.benefit-card p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* --- Social Proof / Testimonials --- */
+.social-proof {
+    padding: 70px 0;
+}
+.social-proof .section-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+.social-proof .section-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+}
+.social-proof .section-header p {
+    color: #64748b;
+}
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+.testimonial-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    border: 1px solid #f1f5f9;
+    transition: transform 0.3s;
+}
+.testimonial-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+.testimonial-card .stars {
+    color: #ffc107;
+    margin-bottom: 15px;
+}
+.testimonial-card .quote {
+    color: #64748b;
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+.testimonial-card .author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.testimonial-card .author-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+.testimonial-card .author-name {
+    font-weight: 600;
+    color: #0f172a;
+    font-size: 0.9rem;
+}
+.testimonial-card .author-title {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* --- Final CTA Section --- */
+.final-cta {
+    padding: 90px 0;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.final-cta::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(14,165,233,0.08), transparent 70%);
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+.final-cta h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    position: relative;
+}
+.final-cta p {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 35px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.final-cta .cta-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+/* --- FAQ Accordion --- */
+.faq-section {
+    padding: 70px 0;
+    background: #f8fafc;
+}
+.faq-section .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.faq-section .section-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+}
+.faq-section .section-header p {
+    color: #64748b;
+}
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.faq-item {
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #f1f5f9;
+    overflow: hidden;
+}
+.faq-question {
+    padding: 18px 25px;
+    font-weight: 600;
+    color: #0f172a;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-question i {
+    color: var(--primary-color);
+    transition: transform 0.3s;
+}
+.faq-answer {
+    padding: 0 25px 18px;
+    color: #64748b;
+    line-height: 1.7;
+    display: none;
+}
+.faq-item.active .faq-answer {
+    display: block;
+}
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+    .sales-hero .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .sales-hero .hero-cta-group {
+        justify-content: center;
+    }
+    .badges-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 576px) {
+    .sales-hero .hero-content h1 {
+        font-size: 2rem;
+    }
+    .badges-grid {
+        grid-template-columns: 1fr;
+    }
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    .final-cta h2 {
+        font-size: 1.8rem;
+    }
+    .btn-cta-primary,
+    .btn-cta-whatsapp {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="brand" content="JOMKAKI MOTOR">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Track Your Order - JOM KAKI MOTOR</title>
+    <title>Contact Us - JOM KAKI MOTOR</title>
     <link rel="stylesheet" href="assets/css/global.css">
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');</style>
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/whatsapp-commerce.css">
 </head>
 <body>
 
@@ -17,7 +19,7 @@
     <header>
         <div class="top-bar">
             <div class="container flex-between">
-                <span>Welcome to JOMKAKIMOTOR Shopping Online Store!</span>
+                <span><a href="../index.html" style="color:#fff;font-weight:600;"><i class="fas fa-home"></i> JOMKAKI</a> &nbsp;|&nbsp; Welcome to JOMKAKI MOTOR Shopping Online Store!</span>
                 <div class="top-links">
                     <a href="#"><img src="https://flagcdn.com/16x12/us.png" alt="" style="margin-right: 5px; vertical-align: middle;"> English</a>
                     <a href="#">($) USD</a>
@@ -55,17 +57,29 @@
                 <div class="nav-links">
                     <a href="index.html">Home</a>
                     <a href="shop.html">Shop</a>
-                    <!-- Dropdown structure -->
+                    <a href="category.html">Categories</a>
+                    <a href="blog.html">Blog</a>
+                    <!-- Templates Dropdown -->
+                    <div style="position: relative; height: 100%; display: flex; align-items: center;" class="dropdown-parent">
+                        <a href="#" style="padding-right: 15px;">Templates <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
+                        <div class="dropdown-menu" style="position: absolute; top: 100%; left: 0; background: #fff; min-width: 200px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: none; z-index: 100;">
+                           <a href="product-template.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">Product Template</a>
+                           <a href="sales-page.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">Sales Page</a>
+                           <a href="category.html" style="color: #333; height: 40px; display: flex; align-items: center; padding-left: 15px;">Category Page</a>
+                        </div>
+                    </div>
+                    <!-- End Templates Dropdown -->
+                    <!-- Pages Dropdown -->
                     <div style="position: relative; height: 100%; display: flex; align-items: center;" class="dropdown-parent">
                         <a href="#" style="padding-right: 15px;">Pages <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
                         <div class="dropdown-menu" style="position: absolute; top: 100%; left: 0; background: #fff; min-width: 200px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: none; z-index: 100;">
-                           <a href="my-account.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee;">My Account</a>
-                           <a href="track-order.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee;">Order Tracking</a>
-                           <a href="faq.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee;">FAQ</a>
-                           <a href="contact.html" style="color: #333; height: 40px;">Contact Us</a>
+                           <a href="my-account.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">My Account</a>
+                           <a href="track-order.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">Order Tracking</a>
+                           <a href="faq.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">FAQ</a>
+                           <a href="contact.html" style="color: #333; height: 40px; display: flex; align-items: center; padding-left: 15px;">Contact Us</a>
                         </div>
                     </div>
-                    <!-- End Dropdown -->
+                    <!-- End Pages Dropdown -->
                 </div>
                 <div class="nav-search"><i class="fas fa-search"></i> Search</div>
             </div>
@@ -73,30 +87,70 @@
     </header>
 
     <main>
-        <div class="page-header">
-            <div class="container">
-                <h1 class="page-title">Track Your Order</h1>
-                <div class="page-subtitle">Enter your Order ID and Billing Email to track</div>
-            </div>
+        
+        <!-- Full Width Map -->
+        <div class="contact-map-section">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0636830508083!2d-122.41941658468161!3d37.77492957975961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050fa5!2sTwitter+HQ!5e0!3m2!1sen!2smy!4v1524672448398" class="contact-map-iframe" allowfullscreen></iframe>
         </div>
 
         <div class="container">
-            <div class="tracking-wrapper">
-                <h3>Order Tracking</h3>
-                <p class="tracking-desc">To track your order please enter your Order ID in the box below and press the "Track" button. This was given to you on your receipt and in the confirmation email you should have received.</p>
-                <form action="#" class="page-form" style="text-align: left; max-width: 600px; margin: 0 auto;">
-                    <div class="form-group">
-                        <label class="form-label">Order ID</label>
-                        <input type="text" class="form-control" placeholder="Found in your order confirmation email.">
+            <div class="contact-layout">
+                
+                <!-- Left: Form -->
+                <div class="contact-form-area">
+                    <h2>Leave a message</h2>
+                    <p class="contact-intro-text">If you have any questions, please feel free to get in touch with us. We will reply to you as soon as possible. Thank you!</p>
+                    
+                    <form action="#" class="page-form">
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label class="form-label">Your Name (required)</label>
+                                <input type="text" class="form-control" placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Your Email (required)</label>
+                                <input type="email" class="form-control" placeholder="Your email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Subject</label>
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Your Message</label>
+                            <textarea class="form-control" placeholder="Your message" style="min-height: 200px; padding-top: 15px;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+
+                <!-- Right: Information -->
+                <div class="contact-info-area">
+                    <div class="info-block">
+                        <h2>Our Store</h2>
+                        <p>6th Forrest Ray,</p>
+                        <p>Manhattan NYC 10001, USA</p>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label">Billing Email</label>
-                        <input type="email" class="form-control" placeholder="Email you used during checkout.">
+
+                    <div class="info-block">
+                        <h2>Hour Of Operation</h2>
+                        <table class="hours-table">
+                            <tr><td>Monday:</td><td>12-6PM</td></tr>
+                            <tr><td>Tuesday:</td><td>12-6PM</td></tr>
+                            <tr><td>Wednesday:</td><td>12-6PM</td></tr>
+                            <tr><td>Thursday:</td><td>12-6PM</td></tr>
+                            <tr><td>Friday:</td><td>12-6PM</td></tr>
+                            <tr><td>Saturday:</td><td>12-6PM</td></tr>
+                            <tr><td>Sunday:</td><td>Closed</td></tr>
+                        </table>
                     </div>
-                    <div style="text-align: center; margin-top: 30px;">
-                        <button type="submit" class="btn btn-primary btn-full" style="max-width: 200px;">Track Order</button>
+
+                    <div class="info-block">
+                        <h2>Careers</h2>
+                        <p>If you're interested in employment opportunities at Flozen, please email us: contact@yourstore.com</p>
                     </div>
-                </form>
+                </div>
+
             </div>
         </div>
     </main>
@@ -164,11 +218,8 @@
             </div>
         </div>
     </footer>
-    
-    <style>
-    .dropdown-parent:hover .dropdown-menu { display: block !important; }
-    </style>
 
 <script src="assets/js/mobile-nav.js"></script>
+<script src="assets/js/whatsapp-commerce.js"></script>
 </body>
 </html>

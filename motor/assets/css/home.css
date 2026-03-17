@@ -1,0 +1,316 @@
+/* Styles specific to Home Page */
+
+/* --- Header Middle --- */
+.header-middle {
+    padding: 30px 0;
+    background: #fff;
+}
+.hotline i { margin-right: 15px; color: #333; }
+.hotline-text { display: flex; flex-direction: column; line-height: 1.2; }
+.hotline-text span { font-size: 0.85rem; color: #666; }
+.hotline-text strong { font-size: 1.1rem; color: #222; font-weight: 700; }
+
+.logo h1 {
+    font-size: 2.8rem;
+    margin: 0;
+    letter-spacing: 1px;
+    font-weight: 800;
+    color: #222;
+}
+
+/* --- Hero Section --- */
+.section-hero {
+    margin-top: 30px; /* Space from Nav */
+    margin-bottom: 50px;
+}
+.hero-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+.vehicle-filter-wrapper {
+    width: 270px; /* Exact match to nav categories width typically */
+    flex-shrink: 0;
+    margin-right: 0; /* Align tightly */
+}
+
+.hero-banner-wrapper {
+    /* width value handled in html via flex-grow */
+    flex-grow: 1;
+    overflow: hidden; /* For slider */
+    width: calc(100% - 300px); /* Fallback/Helper to ensure space constraint */
+}
+
+.hero-banner-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.hero-slide {
+    /* min-width: 100%; REMOYED - Causes sizing issues with JS slider width calculation */
+    /* Existing hero-banner styles moved here */
+    background: url('../images/banners/gray-abstract-textured-background.jpg.jpeg') center center/cover no-repeat; 
+    padding: 0 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: visible; 
+    min-height: 450px;
+    box-sizing: border-box;
+    display: none; /* Hide by default */
+}
+.hero-slide.active {
+    display: flex; /* Show active */
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Refine Hero Content for accuracy */
+.hero-content h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #2b2d42;
+    margin: 10px 0;
+}
+.hero-content .offer-tag {
+    color: #888;
+    font-weight: 500;
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+}
+.hero-image-container .price-badge {
+    width: 90px;
+    height: 90px;
+    background: #7bd32a; /* Brighter green */
+    top: -30px;
+    left: 20px;
+}
+
+/* --- Features Bar --- */
+.section-features { margin-bottom: 60px; }
+.features-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border: none !important; /* Forces removal of border */
+}
+.features-grid .service-feature {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    flex: 1;
+    justify-content: center;
+    border-right: none !important; /* Forces removal of border-right */
+}
+.features-grid .service-feature:last-child { border-right: none; }
+.features-grid .icon-box i { font-size: 2.2rem; margin-right: 15px; color: var(--primary-color);}
+.features-grid .text-box h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 3px; color: #333; }
+.features-grid .text-box p { font-size: 0.8rem; color: #888; margin: 0; }
+
+/* --- Product Grid & Tabs --- */
+.section-products { 
+    margin-bottom: 60px;
+    margin-top: 80px; /* Increased top margin as requested */
+}
+.section-header h2 { font-size: 1.5rem; font-weight: 700; color: #333; margin: 0; }
+.section-tabs { border-bottom: 1px solid transparent; } /* Clean up */
+.section-tabs a {
+    text-decoration: none;
+    color: #888;
+    margin-left: 35px;
+    font-weight: 400;
+    font-size: 0.9rem;
+    padding-bottom: 5px;
+}
+.section-tabs a.active {
+    color: #333;
+    font-weight: 700;
+    border-bottom: 2px solid var(--primary-color);
+}
+.products-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* --- Deal Of The Day - Refined --- */
+.section-deal { margin-bottom: 60px; }
+.section-header-red {
+    background: #fff; /* It's actually white header in screen with red ends-in label? No, check screen. */
+    padding: 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+.section-header-red h2 { font-size: 1.5rem; color: #333; margin: 0; margin-right: 30px;}
+.deal-countdown {
+    background: transparent;
+    color: #333;
+    display: flex;
+    align-items: stretch; /* Stretch to fill height */
+    font-weight: normal;
+    padding: 0;
+    height: 36px; /* Fixed height for consistency */
+}
+.ends-in-label {
+    background: var(--primary-color);
+    color: white;
+    padding: 0 15px; /* Removed top/bottom padding, handle with flex align */
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+}
+.timer-box { 
+    background: #d90429; /* Slightly different shade or same to blend? User image implies slight diff or line */
+    /* Making it same color for seamless look as requested "remove inconsistency" */
+    background: var(--primary-color);
+    color: white;
+    padding: 0 15px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-left: 1px; /* Tiny gap if they want separation, or 0 for seamless. */
+    border-left: 1px solid rgba(255,255,255,0.2); /* Subtle divider */
+    display: flex;
+    align-items: center;
+}
+
+.deal-content {
+    display: flex;
+    gap: 0; /* Removing gap, using grid */
+}
+.deal-products {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+.deal-products .product-card {
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.deal-products .product-card:last-child { border-bottom: none; }
+.deal-products .product-img { width: 140px; height: 140px; margin-bottom: 0; flex-shrink: 0; }
+.deal-products .product-info { padding-left: 20px; }
+.deal-products .countdown-timer { 
+    background: transparent; color: var(--primary-color); padding: 0; font-size: 0.8rem; margin: 5px 0; min-width: auto; 
+}
+.deal-banner-image {
+    width: 65%;
+    background: #fcfcfc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid #eee;
+}
+
+/* --- Top Lists Sections (New) --- */
+.section-top-lists { margin-bottom: 60px; }
+.top-lists-grid {
+    display: flex;
+    gap: 30px;
+}
+.list-column {
+    flex: 1;
+}
+.list-column h3 {
+    font-size: 1.1rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    position: relative;
+}
+/* Active line indicator for headers */
+.list-column h3::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+.list-product-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.list-product-img {
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+    margin-right: 20px;
+}
+.list-product-img i { font-size: 2rem; color: #555; }
+.list-product-info h4 {
+    font-size: 0.9rem;
+    margin: 0 0 5px 0;
+}
+.list-product-info h4 a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.list-product-info h4 a:hover { color: var(--primary-color); }
+
+/* --- Brands Section (New) --- */
+.section-brands {
+    margin-bottom: 60px;
+    padding: 30px 0;
+    border-top: 1px solid #eee;
+}
+.brands-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Removed opacity: 0.6 on wrapper, will handle per item */
+}
+.brand-item {
+    /* Removed font styles, now using images */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+}
+.brand-item img {
+    max-height: 120px; /* Slight increase from 100px */
+    max-width: 240px; /* Slight increase */
+    filter: grayscale(100%); /* Gray by default */
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.brand-item img:hover {
+    filter: grayscale(0%); /* Color on hover */
+    opacity: 1;
+}
+
+/* --- Newsletter Refine --- */
+.section-newsletter {
+    background-color: transparent; 
+    padding-bottom: 80px;
+}
+.newsletter-box {
+    box-shadow: 0 5px 30px rgba(0,0,0,0.05);
+    width: 100%; /* Ensure full width */
+    margin: 20px 0; /* Align vertically */
+}

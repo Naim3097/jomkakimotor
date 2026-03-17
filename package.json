@@ -1,7 +1,7 @@
 {
-  "name": "kakimotor",
-  "version": "1.0.0",
-  "description": "",
+  "name": "jomkaki",
+  "version": "2.0.0",
+  "description": "JOMKAKI - One Brand, Many Faces. Multi-brand e-commerce platform.",
   "scripts": {
     "dev": "live-server"
   },

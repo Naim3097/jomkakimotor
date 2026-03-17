@@ -1,0 +1,329 @@
+/* 
+   responsive.css 
+   Consolidated Mobile Optimization Styles 
+   Loaded LAST to override all other styles.
+*/
+
+/* 1. Global Touch & Typo Fixes */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 2. Mobile Components - STRICTLY HIDDEN ON DESKTOP */
+.mobile-menu-toggle {
+    display: none !important;
+}
+.mobile-menu-close {
+    display: none !important; 
+    opacity: 0;
+    visibility: hidden;
+}
+.mobile-menu-overlay {
+    display: none !important;
+}
+
+/* =========================================
+   Tablet & Mobile Layouts (max-width: 991px)
+   ========================================= */
+@media (max-width: 991px) {
+    
+    /* Global Inputs */
+    input[type="text"], 
+    input[type="email"], 
+    input[type="password"], 
+    select, 
+    textarea {
+        font-size: 16px; 
+        min-height: 44px;
+        max-width: 100%;
+        box-sizing: border-box; 
+    }
+    button, .btn {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container {
+        overflow-x: hidden;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* REVEAL Mobile Menu Components */
+    .mobile-menu-toggle {
+        display: block !important;
+        font-size: 1.8rem;
+        color: #333;
+        cursor: pointer;
+        position: absolute;
+        top: -65px; 
+        right: 0;
+        z-index: 101;
+    }
+    
+    .mobile-menu-close {
+        display: block !important;
+        opacity: 1;
+        visibility: visible;
+        text-align: right;
+        padding: 15px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #666;
+        border-bottom: 1px solid #eee;
+        background: #fff;
+    }
+    
+    .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+    }
+    .mobile-menu-overlay.active {
+        display: block !important;
+    }
+
+    /* --- Header Middle --- */
+    .header-middle .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .header-middle .logo {
+        order: 1;
+        margin-bottom: 0;
+        flex-grow: 1;
+    }
+    .header-middle .logo img {
+        max-height: 45px;
+    }
+    .hotline { display: none; }
+    .header-icons {
+        order: 2;
+        width: auto;
+        margin-top: 0;
+        justify-content: flex-end;
+    }
+    .header-search {
+        order: 4;
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    /* --- Navigation Bar --- */
+    .main-nav {
+        background: transparent;
+        height: 0;
+        padding: 0;
+    }
+    .main-nav .container { padding: 0; }
+
+    /* MENU DRAWER */
+    .nav-links {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -280px;
+        width: 280px;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+        text-align: left;
+        transition: left 0.3s ease-in-out;
+        overflow-y: auto;
+    }
+    .nav-links.active { left: 0; }
+    .nav-links a {
+        color: #333;
+        padding: 15px 20px;
+        border-bottom: 1px solid #f5f5f5;
+        width: 100%;
+        display: block;
+        font-weight: 500;
+    }
+    .cat-menu { display: none; }
+
+    /* --- Home: Hero Fixed --- */
+    .hero-layout {
+        flex-direction: column;
+    }
+    .vehicle-filter-wrapper {
+        width: 100% !important; 
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+    .hero-banner-wrapper {
+        width: 100% !important;
+        overflow: hidden; /* Encapsulate slider */
+        min-height: 380px; /* Force minimum height */
+    }
+    
+    /* The Slider Track */
+    .hero-banner-slider {
+        display: flex;
+        width: 500%; /* For 5 slides */
+    }
+
+    .hero-slide {
+        display: flex !important; /* Force flex for layout */
+        flex-direction: column-reverse !important;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: center;
+        padding: 30px 15px !important;
+        flex-shrink: 0; /* CRITICAL for slider */
+        width: auto; /* Handled by JS (20%) */
+        background-color: #f9f9f9; /* Fallback for missing img */
+        min-height: 380px; /* Match wrapper */
+        box-sizing: border-box;
+    }
+    
+    /* Content visibility enforcement */
+    .hero-content {
+        width: 100%;
+        opacity: 1 !important;
+        z-index: 2;
+        padding-top: 20px;
+    }
+    .hero-content h1 {
+        font-size: 1.8rem !important;
+        color: #333; /* Ensure contrast */
+    }
+    .hero-content p, .hero-content .offer-tag {
+        display: block !important;
+        color: #666;
+    }
+    .hero-content .btn {
+        display: inline-flex !important;
+    }
+    
+    .hero-image-container {
+        width: 100%;
+        height: auto;
+        display: block;
+        position: relative;
+    }
+    .hero-image-container img {
+        max-height: 180px !important;
+        display: block;
+        margin: 0 auto;
+    }
+    .hero-image-container .price-badge {
+        left: 50% !important;
+        transform: translateX(60%);
+        top: 0 !important;
+    }
+
+    /* --- Grids --- */
+    .features-grid, .products-grid-4, .top-lists-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    /* --- Deal of Day --- */
+    .deal-content { flex-direction: column; }
+    .deal-products, .deal-banner-image {
+        width: 100% !important;
+        border-left: none;
+        border-top: 1px solid #eee;
+    }
+
+    /* --- Shop Page --- */
+    .shop-layout { flex-direction: column; }
+    .shop-sidebar {
+        width: 100% !important;
+        margin-bottom: 30px;
+    }
+    .shop-vehicle-filter, .filter-group, .shop-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    /* --- Footer --- */
+    .site-footer .footer-top { flex-direction: column; }
+    .footer-bottom .container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+     /* --- Cart Page --- */
+     .cart-wrapper { flex-direction: column; }
+     .cart-table thead { display: none; }
+     .cart-table tbody, .cart-table tr, .cart-table td {
+        display: block;
+        width: 100%;
+    }
+    .cart-table tr {
+        margin-bottom: 20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 15px;
+        background: #fff;
+    }
+    .cart-table td {
+        padding: 8px 0;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #f9f9f9;
+        font-size: 0.95rem;
+    }
+    /* ... Cart Detail overrides inferred ... */
+    .cart-table td:nth-child(1) { justify-content: center; }
+    .cart-table td:nth-child(2) { 
+        justify-content: center; color: #ea5b0c; font-weight: 700; text-align: center;
+    }
+    .cart-table td:last-child {
+        border-bottom: none; position: absolute; top: 10px; right: 10px; padding: 0;
+    }
+    /* Force forms to stack */
+    .cart-wrapper form, .cart-wrapper > div:last-child, .cart-wrapper form button {
+        width: 100% !important;
+        flex-direction: column;
+        display: flex;
+    }
+}
+
+/* =========================================
+   Mobile Phones (max-width: 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    .product-detail-wrapper, .contact-layout, .login-register-wrapper {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+    .product-gallery { flex-direction: column-reverse; }
+    .gallery-thumbs {
+        flex-direction: row;
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+    .contact-info-area {
+        padding-left: 0 !important;
+        border-left: none !important;
+        padding-top: 30px;
+    }
+}
+
+/* =========================================
+   Small Phones (max-width: 576px)
+   ========================================= */
+@media (max-width: 576px) {
+    .features-grid, .products-grid-4, .top-lists-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .top-bar { display: none; }
+}

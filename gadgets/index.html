@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="brand" content="JOMKAKI GADGETS">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOM KAKI GADGETS - Gadgets & Tech Store</title>
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+    </style>
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/whatsapp-commerce.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="container flex-between">
+                <span><a href="../index.html" style="color:#fff;font-weight:600;"><i class="fas fa-home"></i> JOMKAKI</a> &nbsp;|&nbsp; Welcome to JOMKAKI GADGETS Shopping Online Store!</span>
+                <div class="top-links">
+                    <a href="#"><img src="https://flagcdn.com/16x12/us.png" alt="" style="margin-right: 5px; vertical-align: middle;"> English</a>
+                    <a href="#">($) USD</a>
+                    <a href="my-account.html"><i class="fas fa-user-circle"></i> Login / Register</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header Middle -->
+        <div class="header-middle">
+            <div class="container flex-between">
+                <!-- Hamburger Menu for Mobile -->
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <div class="hotline">
+                    <i class="fas fa-headset fa-2x"></i>
+                    <div class="hotline-text">
+                        <span>Hotline:</span>
+                        <strong>1-900-888-999</strong>
+                    </div>
+                </div>
+                
+                <div class="logo">
+                     <a href="index.html"><img src="assets/images/logos/LOGO JOM KAKI.png" alt="JOM KAKI GADGETS" style="max-height: 90px;"></a>
+                </div>
+
+                <div class="header-icons">
+                    <a href="#"><i class="fas fa-search" style="font-size: 1.1rem;"></i></a>
+                    <a href="#"><i class="far fa-heart" style="font-size: 1.1rem;"></i></a>
+                    <a href="cart.html" style="position: relative;">
+                        <i class="fas fa-shopping-bag" style="font-size: 1.3rem;"></i>
+                        <span style="position: absolute; top: -8px; right: -8px; background: var(--primary-color); color: white; width: 18px; height: 18px; border-radius: 50%; font-size: 0.7rem; display: flex; align-items: center; justify-content: center;">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="main-nav">
+            <div class="container" style="height: 100%;">
+                <div class="cat-menu">
+                    <i class="fas fa-bars"></i> Browse Categories
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="shop.html">Shop</a>
+                    <a href="category.html">Categories</a>
+                    <a href="blog.html">Blog</a>
+                    <!-- Templates Dropdown -->
+                    <div style="position: relative; height: 100%; display: flex; align-items: center;" class="dropdown-parent">
+                        <a href="#" style="padding-right: 15px;">Templates <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
+                        <div class="dropdown-menu" style="position: absolute; top: 100%; left: 0; background: #fff; min-width: 200px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: none; z-index: 100;">
+                           <a href="product-template.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">Product Template</a>
+                           <a href="sales-page.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">Sales Page</a>
+                           <a href="category.html" style="color: #333; height: 40px; display: flex; align-items: center; padding-left: 15px;">Category Page</a>
+                        </div>
+                    </div>
+                    <!-- End Templates Dropdown -->
+                    <!-- Pages Dropdown -->
+                    <div style="position: relative; height: 100%; display: flex; align-items: center;" class="dropdown-parent">
+                        <a href="#" style="padding-right: 15px;">Pages <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
+                        <div class="dropdown-menu" style="position: absolute; top: 100%; left: 0; background: #fff; min-width: 200px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: none; z-index: 100;">
+                           <a href="my-account.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">My Account</a>
+                           <a href="track-order.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">Order Tracking</a>
+                           <a href="faq.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">FAQ</a>
+                           <a href="contact.html" style="color: #333; height: 40px; display: flex; align-items: center; padding-left: 15px;">Contact Us</a>
+                        </div>
+                    </div>
+                    <!-- End Pages Dropdown -->
+                </div>
+                <div class="nav-search">
+                    <i class="fas fa-search"></i> Search
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="section-hero">
+            <div class="container">
+                <div class="hero-layout">
+                    <!-- Vehicle Filter (Left, Swapped back to align with Browse Categories) -->
+                    <div class="vehicle-filter-wrapper">
+                        <div class="vehicle-filter-box" style="width: 100%;">
+                            <h3>Select Your Device</h3>
+                            <p class="subtitle">OVER 10,000 GADGETS & ACCESSORIES</p>
+                            
+                            <div class="form-group">
+                                <span class="step-num">1</span>
+                                <select><option>Select Level 1</option></select>
+                            </div>
+                            <div class="form-group">
+                                <span class="step-num">2</span>
+                                <select><option>Select Level 2</option></select>
+                            </div>
+                            <div class="form-group">
+                                <span class="step-num">3</span>
+                                <select><option>Select Level 3</option></select>
+                            </div>
+                            <button class="btn btn-primary btn-block"><i class="fas fa-search"></i> Find My Gadget</button>
+                        </div>
+                    </div>
+
+                    <!-- Hero Banner (Right) -->
+                    <div class="hero-banner-wrapper" style="flex-grow: 1;">
+                        <div class="hero-banner-slider" id="heroSlider">
+                            <!-- Slide 1 -->
+                            <div class="hero-slide active">
+                                <div class="hero-content">
+                                    <span class="offer-tag">SPECIAL OFFER</span>
+                                    <h1>Wireless Earbuds <br>Premium Sound</h1>
+                                    <p class="sale-text">Sale up to <span class="text-green">20% Off</span></p>
+                                    <a href="#" class="btn btn-primary">Shop Now</a>
+                                </div>
+                                <div class="hero-image-container">
+                                    <div class="price-badge">
+                                        <span>ONLY</span>
+                                        <span class="amount">$199</span>
+                                    </div>
+                                    <img src="assets/images/products/headphones.png" alt="Product" style="max-height: 350px;">
+                                </div>
+                            </div>
+                             <!-- Slide 2 -->
+                             <div class="hero-slide">
+                                <div class="hero-content">
+                                    <span class="offer-tag">NEW ARRIVAL</span>
+                                    <h1>Smart Watch <br>Pro Series</h1>
+                                    <p class="sale-text">Best for <span class="text-green">Fitness</span></p>
+                                    <a href="#" class="btn btn-primary">Shop Now</a>
+                                </div>
+                                <div class="hero-image-container">
+                                    <div class="price-badge">
+                                        <span>FROM</span>
+                                        <span class="amount">$249</span>
+                                    </div>
+                                    <img src="assets/images/products/smartwatch.png" alt="Smart Watch" style="max-height: 350px;">
+                                </div>
+                            </div>
+                             <!-- Slide 3 -->
+                             <div class="hero-slide">
+                                <div class="hero-content">
+                                    <span class="offer-tag">EXCLUSIVE</span>
+                                    <h1>Power Bank <br>Fast Charge</h1>
+                                    <p class="sale-text">Discount <span class="text-green">15% Off</span></p>
+                                    <a href="#" class="btn btn-primary">Check It Out</a>
+                                </div>
+                                <div class="hero-image-container">
+                                    <div class="price-badge">
+                                        <span>ONLY</span>
+                                        <span class="amount">$150</span>
+                                    </div>
+                                    <img src="assets/images/products/powerbank.png" alt="Power Bank" style="max-height: 350px;">
+                                </div>
+                            </div>
+                             <!-- Slide 4 -->
+                             <div class="hero-slide">
+                                <div class="hero-content">
+                                    <span class="offer-tag">HOT DEAL</span>
+                                    <h1>USB-C Hub <br>Multi-Port</h1>
+                                    <p class="sale-text">Buy 2 <span class="text-green">Get 1 Free</span></p>
+                                    <a href="#" class="btn btn-primary">Buy Now</a>
+                                </div>
+                                <div class="hero-image-container">
+                                     <div class="price-badge">
+                                        <span>ONLY</span>
+                                        <span class="amount">$45</span>
+                                    </div>
+                                    <img src="assets/images/products/usbhub.png" alt="USB-C Hub" style="max-height: 350px;">
+                                </div>
+                            </div>
+                             <!-- Slide 5 -->
+                             <div class="hero-slide">
+                                <div class="hero-content">
+                                    <span class="offer-tag">LIMITED TIME</span>
+                                    <h1>Mechanical Keyboard <br>RGB Pro</h1>
+                                    <p class="sale-text">Upgrade <span class="text-green">Now</span></p>
+                                    <a href="#" class="btn btn-primary">Boost Now</a>
+                                </div>
+                                <div class="hero-image-container">
+                                    <div class="price-badge">
+                                        <span>SAVE</span>
+                                        <span class="amount">$500</span>
+                                    </div>
+                                    <img src="assets/images/products/keyboard.png" alt="Mechanical Keyboard" style="max-height: 350px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Bar -->
+        <section class="section-features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="service-feature">
+                        <div class="icon-box"><i class="fas fa-truck text-primary"></i></div>
+                        <div class="text-box"><h4>Free Delivery</h4><p>Free Shipping for all Order</p></div>
+                    </div>
+                    <div class="service-feature">
+                        <div class="icon-box"><i class="fas fa-headset text-primary"></i></div>
+                        <div class="text-box"><h4>Support 24/7</h4><p>We support 24h a day</p></div>
+                    </div>
+                    <div class="service-feature">
+                        <div class="icon-box"><i class="fas fa-undo text-primary"></i></div>
+                        <div class="text-box"><h4>100% Money Back</h4><p>You have 30 days to Return</p></div>
+                    </div>
+                    <div class="service-feature">
+                        <div class="icon-box"><i class="far fa-credit-card text-primary"></i></div>
+                        <div class="text-box"><h4>Payment Secure</h4><p>We ensure secure payment</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promo Banners -->
+        <section class="section-banners">
+            <div class="container">
+                <div class="promo-grid">
+                    <!-- Banner 1 -->
+                    <div class="promo-box">
+                        <div class="promo-content">
+                            <h3>Smart Home <br>Hub <span class="fw-normal">Pro Edition</span></h3>
+                            <p class="price-label">Just Only <span class="text-green">$120.00</span></p>
+                            <a href="#" class="btn btn-primary btn-sm">Shop Now</a>
+                        </div>
+                        <div class="promo-img"><img src="assets/images/products/smartwatch.png" alt="Product" style="max-height: 150px;"></div>
+                    </div>
+                    <!-- Banner 2 -->
+                    <div class="promo-box">
+                        <div class="promo-content">
+                            <h3>Charging Station <br>Wireless <span class="fw-normal">3-in-1</span></h3>
+                            <p class="price-label">Discount <span class="text-red">25% Off</span></p>
+                            <a href="#" class="btn btn-primary btn-sm">Shop Now</a>
+                        </div>
+                        <div class="promo-img"><img src="assets/images/products/earbuds.png" alt="Product" style="max-height: 150px;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Grid "What we offer" -->
+        <section class="section-products">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What we offer</h2>
+                    <div class="section-tabs">
+                        <a href="#" class="active">New Arrivals</a>
+                        <a href="#">Featured</a>
+                        <a href="#">Popular</a>
+                        <a href="#">On Sale</a>
+                    </div>
+                </div>
+                
+                <div class="products-grid-4">
+                    <!-- Row 1 -->
+                        <div class="product-card">
+                             <span class="badge badge-sale">-16%</span>
+                            <div class="product-img"><a href="product-details.html"><img src="assets/images/products/speaker.png" alt="Product" style="max-height: 150px;"></a></div>
+                            <div class="countdown-timer">344 : 17 : 13 : 53 <small><span>Days</span> <span>Hours</span> <span>Mins</span> <span>Secs</span></small></div>
+                            <div class="product-info">
+                            <span class="category">Smart Wearables</span>
+                            <h4 class="product-title"><a href="product-details.html">Wireless Noise-Cancelling Headphones</a></h4>
+                            <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
+                            <div class="price"><span class="old-price">$70.00</span><span class="new-price">$59.00</span></div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <span class="badge badge-sale">-17%</span>
+                        <div class="product-img"><a href="product-details.html"><img src="assets/images/products/powerbank.png" alt="Product" style="max-height: 150px;"></a></div>
+                        <div class="countdown-timer">344 : 17 : 13 : 53 <small><span>Days</span> <span>Hours</span> <span>Mins</span> <span>Secs</span></small></div>
+                        <div class="product-info">
+                            <span class="category">Smart Wearables</span>
+                            <h4 class="product-title"><a href="product-details.html">Smart Wearables Gold RTS</a></h4>
+                            <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
+                            <div class="price"><span class="old-price">$95.00</span><span class="new-price">$79.00</span></div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <span class="badge badge-sale">-35%</span>
+                        <div class="product-img"><a href="product-details.html"><img src="assets/images/products/keyboard.png" alt="Product" style="max-height: 150px;"></a></div>
+                        <div class="countdown-timer">344 : 17 : 13 : 53 <small><span>Days</span> <span>Hours</span> <span>Mins</span> <span>Secs</span></small></div>
+                        <div class="product-info">
+                            <span class="category">Smart Wearables</span>
+                            <h4 class="product-title"><a href="product-details.html">Bluetooth Speaker Waterproof</a></h4>
+                            <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
+                            <div class="price"><span class="old-price">$60.00</span><span class="new-price">$39.00</span></div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><a href="product-details.html"><img src="assets/images/products/mouse.png" alt="Product" style="max-height: 150px;"></a></div>
+                         <!-- Spacer for alignment since no timer -->
+                        <div style="height: 52px; margin-bottom: 5px;"></div>
+                        <div class="product-info">
+                            <span class="category">Gaming Peripherals</span>
+                            <h4 class="product-title"><a href="product-details.html">Gaming Peripherals</a></h4>
+                            <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
+                            <div class="price"><span class="new-price">$35.00</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="product-card">
+                         <span class="badge badge-sale">-28%</span>
+                        <div class="product-img"><a href="product-details.html"><img src="assets/images/products/phonecase.png" alt="Product" style="max-height: 150px;"></a></div>
+                         <div class="countdown-timer">344 : 17 : 13 : 53 <small><span>Days</span> <span>Hours</span> <span>Mins</span> <span>Secs</span></small></div>
+                        <div class="product-info">
+                             <span class="category">Speakers</span>
+                            <h4 class="product-title"><a href="product-details.html">Portable Bluetooth Speaker X1</a></h4>
+                             <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
+                            <div class="price"><span class="old-price">$65.00</span><span class="new-price">$49.00</span></div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img"><a href="product-details.html"><img src="assets/images/products/usbhub.png" alt="Product" style="max-height: 150px;"></a></div>
+                        <div style="height: 52px; margin-bottom: 5px;"></div>
+                        <div class="product-info">
+                            <span class="category">Speakers</span>
+                            <h4 class="product-title"><a href="product-details.html">TWS Earbuds Pro Max</a></h4>
+                            <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
+                            <div class="price"><span class="new-price">$25.00</span></div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                         <span class="badge badge-sale">-13%</span>
+                        <div class="product-img"><a href="product-details.html"><img src="assets/images/products/charger.png" alt="Product" style="max-height: 150px;"></a></div>
+                        <div class="countdown-timer">344 : 17 : 13 : 53 <small><span>Days</span> <span>Hours</span> <span>Mins</span> <span>Secs</span></small></div>
+                        <div class="product-info">
+                             <span class="category">Phone Accessories</span>
+                            <h4 class="product-title"><a href="product-details.html">MagSafe Phone Case</a></h4>
+                            <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
+                            <div class="price"><span class="old-price">$45.00</span><span class="new-price">$39.00</span></div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                         <span class="badge badge-sale">-27%</span>
+                        <div class="product-img"><a href="product-details.html"><img src="assets/images/products/headphones.png" alt="Product" style="max-height: 150px;"></a></div>
+                        <div class="countdown-timer">344 : 17 : 13 : 53 <small><span>Days</span> <span>Hours</span> <span>Mins</span> <span>Secs</span></small></div>
+                        <div class="product-info">
+                             <span class="category">Phone Accessories</span>
+                            <h4 class="product-title"><a href="product-details.html">USB-C Fast Charger 65W</a></h4>
+                            <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i></div>
+                            <div class="price"><span class="old-price">$45.00</span><span class="new-price">$33.00</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deal Of The Day -->
+        <section class="section-deal">
+             <div class="container">
+                <div class="section-header-red">
+                    <h2>Deal of the day</h2>
+                    <div class="deal-countdown">
+                        <span class="ends-in-label">Ends in:</span>
+                        <div class="timer-box">342 : 17 : 13 : 53</div>
+                    </div>
+                    <div class="nav-arrows" style="margin-left: auto; color: #ccc;">
+                         <i class="fas fa-chevron-left" style="margin-right: 10px;"></i> <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <div class="deal-content">
+                    <div class="deal-products">
+                        <!-- Deal Item 1 -->
+                        <div class="product-card">
+                            <div class="product-img"><a href="product-details.html"><img src="assets/images/products/smartwatch.png" alt="Product" style="max-height: 120px;"></a></div>
+                            <div class="product-info">
+                                <span class="badge badge-sale" style="position: static; margin-bottom: 5px; display: inline-block;">-16%</span>
+                                <div class="countdown-timer">344 : 17 : 13 : 52</div>
+                                <span class="category">Smart Wearables</span>
+                                <h4 class="product-title"><a href="product-details.html">Wireless Noise-Cancelling Headphones</a></h4>
+                                <div class="price"><span class="old-price">$70.00</span><span class="new-price">$59.00</span></div>
+                            </div>
+                        </div>
+                         <!-- Deal Item 2 -->
+                         <div class="product-card">
+                            <div class="product-img"><a href="product-details.html"><img src="assets/images/products/earbuds.png" alt="Product" style="max-height: 120px;"></a></div>
+                            <div class="product-info">
+                                <span class="badge badge-sale" style="position: static; margin-bottom: 5px; display: inline-block;">-17%</span>
+                                <div class="countdown-timer">344 : 17 : 13 : 52</div>
+                                <span class="category">Smart Wearables</span>
+                                <h4 class="product-title"><a href="product-details.html">Smart Wearables Gold RTS</a></h4>
+                                <div class="price"><span class="old-price">$95.00</span><span class="new-price">$79.00</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="deal-banner-image">
+                        <img src="assets/images/products/speaker.png" alt="Deal" style="max-height: 250px;">
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- Top Lists (Rated, Selling, On Sale) -->
+        <section class="section-top-lists">
+            <div class="container">
+                <div class="top-lists-grid">
+                    <!-- Column 1 -->
+                    <div class="list-column">
+                        <h3>Top Rated Products</h3>
+                        <div class="list-products">
+                            <div class="list-product-item">
+                                <div class="list-product-img"><img src="assets/images/products/powerbank.png" alt="Product" style="max-height: 60px;"></div>
+                                <div class="list-product-info">
+                                    <span class="category">Smart Wearables</span>
+                                    <h4><a href="#">Smart Wearables Gold RTS</a></h4>
+                                    <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
+                                    <div class="price"><span class="old-price">$95.00</span> <span class="new-price">$79.00</span></div>
+                                </div>
+                            </div>
+                            <!-- More items... -->
+                             <div class="list-product-item">
+                                <div class="list-product-img"><img src="assets/images/products/keyboard.png" alt="Product" style="max-height: 60px;"></div>
+                                <div class="list-product-info">
+                                    <span class="category">Smart Wearables</span>
+                                    <h4><a href="#">Bluetooth Speaker Mini</a></h4>
+                                    <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
+                                    <div class="price"><span class="old-price">$60.00</span> <span class="new-price">$39.00</span></div>
+                                </div>
+                            </div>
+                             <div class="list-product-item">
+                                <div class="list-product-img"><img src="assets/images/products/mouse.png" alt="Product" style="max-height: 60px;"></div>
+                                <div class="list-product-info">
+                                    <span class="category">Gaming Peripherals</span>
+                                    <h4><a href="#">Gaming Peripherals</a></h4>
+                                    <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
+                                    <div class="price"><span class="new-price">$35.00</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="list-column">
+                        <h3>Top Selling Products</h3>
+                         <div class="list-products">
+                            <div class="list-product-item">
+                                <div class="list-product-img"><img src="assets/images/products/phonecase.png" alt="Product" style="max-height: 60px;"></div>
+                                <div class="list-product-info">
+                                    <span class="category">Charging Cables</span>
+                                    <h4><a href="#">Charging Cables</a></h4>
+                                    <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
+                                    <div class="price"><span class="new-price">$75.00</span></div>
+                                </div>
+                            </div>
+                             <div class="list-product-item">
+                                <div class="list-product-img"><img src="assets/images/products/usbhub.png" alt="Product" style="max-height: 60px;"></div>
+                                <div class="list-product-info">
+                                    <span class="category">Speakers</span>
+                                    <h4><a href="#">TWS Earbuds Pro Max</a></h4>
+                                    <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
+                                    <div class="price"><span class="new-price">$25.00</span></div>
+                                </div>
+                            </div>
+                             <div class="list-product-item">
+                                <div class="list-product-img"><img src="assets/images/products/charger.png" alt="Product" style="max-height: 60px;"></div>
+                                <div class="list-product-info">
+                                    <span class="category">Smart Wearables</span>
+                                    <h4><a href="#">Bluetooth Speaker Mini</a></h4>
+                                    <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
+                                    <div class="price"><span class="old-price">$60.00</span> <span class="new-price">$39.00</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 3 -->
+                    <div class="list-column">
+                        <h3>On Sale Products</h3>
+                         <div class="list-products">
+                            <div class="list-product-item">
+                                <div class="list-product-img"><img src="assets/images/products/headphones.png" alt="Product" style="max-height: 60px;"></div>
+                                <div class="list-product-info">
+                                    <span class="category">Audio Gear</span>
+                                    <h4><a href="#">Wireless Gaming Mouse</a></h4>
+                                    <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
+                                    <div class="price"><span class="old-price">$69.00</span> <span class="new-price">$59.00</span></div>
+                                </div>
+                            </div>
+                             <div class="list-product-item">
+                                <div class="list-product-img"><i class="fas fa-dharmachakra fa-2x" style="color: blue;"></i></div>
+                                <div class="list-product-info">
+                                    <span class="category">Smart Wearables</span>
+                                    <h4><a href="#">Bluetooth Speaker Mini</a></h4>
+                                    <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
+                                    <div class="price"><span class="old-price">$60.00</span> <span class="new-price">$39.00</span></div>
+                                </div>
+                            </div>
+                             <div class="list-product-item">
+                                <div class="list-product-img"><img src="assets/images/products/smartwatch.png" alt="Product" style="max-height: 60px;"></div>
+                                <div class="list-product-info">
+                                    <span class="category">Smart Wearables</span>
+                                    <h4><a href="#">Smart Wearables Gold RTS</a></h4>
+                                    <div class="rating"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
+                                    <div class="price"><span class="old-price">$95.00</span> <span class="new-price">$79.00</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brands Section -->
+        <section class="section-brands">
+            <div class="container">
+                <div class="brands-wrapper">
+                    <!-- Tech Brand Partners -->
+                    <div class="brand-item"><i class="fas fa-microchip fa-3x" style="color:#555;"></i><span style="display:block;font-weight:600;margin-top:5px;">TechCore</span></div>
+                    <div class="brand-item"><i class="fas fa-headphones fa-3x" style="color:#555;"></i><span style="display:block;font-weight:600;margin-top:5px;">SoundMax</span></div>
+                    <div class="brand-item"><i class="fas fa-mobile-alt fa-3x" style="color:#555;"></i><span style="display:block;font-weight:600;margin-top:5px;">SmartLife</span></div>
+                    <div class="brand-item"><i class="fas fa-gamepad fa-3x" style="color:#555;"></i><span style="display:block;font-weight:600;margin-top:5px;">GameZone</span></div>
+                    <div class="brand-item"><i class="fas fa-bolt fa-3x" style="color:#555;"></i><span style="display:block;font-weight:600;margin-top:5px;">PowerUp</span></div>
+                    <div class="brand-item"><i class="fas fa-wifi fa-3x" style="color:#555;"></i><span style="display:block;font-weight:600;margin-top:5px;">ConnectX</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="section-newsletter">
+             <div class="container">
+                <div class="newsletter-box" style="background: white; padding: 40px; margin-top: 20px;">
+                    <div class="flex-between">
+                         <div style="width: 40%;">
+                            <h3 style="margin-top:0;">Newsletter</h3>
+                            <p style="margin-bottom:0;">Subscribe to get information about products and coupons</p>
+                        </div>
+                        <div style="width: 50%;">
+                            <form class="newsletter-form">
+                                <input type="email" placeholder="Enter your email here">
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+        <!-- Footer (Standard) -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col footer-contact">
+                    <div class="footer-logo">
+                        <a href="index.html"><img src="assets/images/logos/LOGO JOM KAKI.png" alt="JOM KAKI GADGETS"></a>
+                    </div>
+                    <div class="contact-info">
+                        <div class="icon-text">
+                            <i class="fas fa-headset"></i>
+                            <div class="text">
+                                <small>Got Question</small>
+                                <strong>1900 0012 333</strong>
+                            </div>
+                        </div>
+                        <p class="address">Calista Wise 7292 Dictum Av.<br>Antonio, Italy.</p>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Privacy & Cookies</a></li>
+                        <li><a href="#">Store Directory</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Social</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Get the latest news & updates from us</p>
+                    <form>
+                        <input type="email" placeholder="Enter your email here">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="container">
+                    <p>&copy; 2024 JOMKAKIGADGETS - All Right reserved!</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy & Cookies</a>
+                        <a href="#">Terms & Conditions</a>
+                        <a href="#">Accessibility</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hero Slider Logic (Smooth Slide)
+        const track = document.getElementById('heroSlider');
+        const slides = track.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+
+        // Ensure track width fits all slides (500% for 5 slides)
+        track.style.width = `${totalSlides * 100}%`;
+        slides.forEach(slide => {
+            slide.style.width = `${100 / totalSlides}%`;
+            slide.style.display = 'flex'; // Ensure visible for Flex layout
+            slide.classList.remove('active'); // Remove old class logic
+        });
+
+        function showNextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            track.style.transform = `translateX(-${currentSlide * (100 / totalSlides)}%)`;
+        }
+        
+        // Auto slide
+        setInterval(showNextSlide, 5000);
+
+        // Brands Marquee Logic
+        const brandWrapper = document.querySelector('.brands-wrapper');
+        if(brandWrapper) {
+            // Clone items for seamless scrolling
+            brandWrapper.innerHTML += brandWrapper.innerHTML;
+            
+            // Add Styles dynamically or via class
+            brandWrapper.style.display = 'flex';
+            brandWrapper.style.overflow = 'hidden';
+            
+            let scrollAmount = 0;
+            function autoScrollBrands() {
+                scrollAmount += 1;
+                // Reset if scrolled half (cloned set)
+                if (scrollAmount >= brandWrapper.scrollWidth / 2) {
+                    scrollAmount = 0;
+                }
+                brandWrapper.scrollTo(scrollAmount, 0);
+                requestAnimationFrame(autoScrollBrands);
+            }
+            // Use CSS Animation preferred for performance, but JS requested for "auto-scroll".
+            // Actually CSS Marquee is better. Let's start a simpler interaction.
+        }
+    </script>
+<style>
+    /* Marquee Animation Support */
+    @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    .brands-wrapper {
+        display: flex;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .brands-wrapper .brand-item {
+        flex-shrink: 0;
+        animation: marquee 15s linear infinite;
+        /* Need to ensure wrapper has cloned items for this to work perfectly */
+    }
+    /* Disable animation on hover? */
+    .brands-wrapper:hover .brand-item {
+        animation-play-state: paused;
+    }
+</style>
+<script>
+    // Duplicate brands for CSS marquee
+    const bWrapper = document.querySelector('.brands-wrapper');
+    if(bWrapper) {
+       bWrapper.innerHTML += bWrapper.innerHTML; // Duplicate once
+    }
+</script>
+<script src="assets/js/mobile-nav.js"></script>
+<script src="assets/js/whatsapp-commerce.js"></script>
+</body>
+</html>

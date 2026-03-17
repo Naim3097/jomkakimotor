@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="brand" content="JOMKAKI MOTOR">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart - JOM KAKI MOTOR</title>
+    <title>Track Your Order - JOM KAKI MOTOR</title>
     <link rel="stylesheet" href="assets/css/global.css">
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');</style>
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/whatsapp-commerce.css">
 </head>
 <body>
 
@@ -17,7 +19,7 @@
     <header>
         <div class="top-bar">
             <div class="container flex-between">
-                <span>Welcome to JOMKAKIMOTOR Shopping Online Store!</span>
+                <span><a href="../index.html" style="color:#fff;font-weight:600;"><i class="fas fa-home"></i> JOMKAKI</a> &nbsp;|&nbsp; Welcome to JOMKAKI MOTOR Shopping Online Store!</span>
                 <div class="top-links">
                     <a href="#"><img src="https://flagcdn.com/16x12/us.png" alt="" style="margin-right: 5px; vertical-align: middle;"> English</a>
                     <a href="#">($) USD</a>
@@ -55,17 +57,29 @@
                 <div class="nav-links">
                     <a href="index.html">Home</a>
                     <a href="shop.html">Shop</a>
-                     <!-- Dropdown structure -->
+                    <a href="category.html">Categories</a>
+                    <a href="blog.html">Blog</a>
+                    <!-- Templates Dropdown -->
+                    <div style="position: relative; height: 100%; display: flex; align-items: center;" class="dropdown-parent">
+                        <a href="#" style="padding-right: 15px;">Templates <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
+                        <div class="dropdown-menu" style="position: absolute; top: 100%; left: 0; background: #fff; min-width: 200px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: none; z-index: 100;">
+                           <a href="product-template.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">Product Template</a>
+                           <a href="sales-page.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">Sales Page</a>
+                           <a href="category.html" style="color: #333; height: 40px; display: flex; align-items: center; padding-left: 15px;">Category Page</a>
+                        </div>
+                    </div>
+                    <!-- End Templates Dropdown -->
+                    <!-- Pages Dropdown -->
                     <div style="position: relative; height: 100%; display: flex; align-items: center;" class="dropdown-parent">
                         <a href="#" style="padding-right: 15px;">Pages <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
                         <div class="dropdown-menu" style="position: absolute; top: 100%; left: 0; background: #fff; min-width: 200px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: none; z-index: 100;">
-                           <a href="my-account.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee;">My Account</a>
-                           <a href="track-order.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee;">Order Tracking</a>
-                           <a href="faq.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee;">FAQ</a>
-                           <a href="contact.html" style="color: #333; height: 40px;">Contact Us</a>
+                           <a href="my-account.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">My Account</a>
+                           <a href="track-order.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">Order Tracking</a>
+                           <a href="faq.html" style="color: #333; height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; padding-left: 15px;">FAQ</a>
+                           <a href="contact.html" style="color: #333; height: 40px; display: flex; align-items: center; padding-left: 15px;">Contact Us</a>
                         </div>
                     </div>
-                    <!-- End Dropdown -->
+                    <!-- End Pages Dropdown -->
                 </div>
                 <div class="nav-search"><i class="fas fa-search"></i> Search</div>
             </div>
@@ -75,77 +89,28 @@
     <main>
         <div class="page-header">
             <div class="container">
-                <h1 class="page-title">Shopping Cart</h1>
-                <div class="page-subtitle">View your items</div>
+                <h1 class="page-title">Track Your Order</h1>
+                <div class="page-subtitle">Enter your Order ID and Billing Email to track</div>
             </div>
         </div>
 
         <div class="container">
-            <div class="cart-wrapper" style="margin-bottom: 60px;">
-                <table class="cart-table">
-                    <thead>
-                        <tr>
-                            <th style="width: 100px;">Image</th>
-                            <th>Product Name</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
-                            <th>Remove</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><div style="width: 80px; height: 80px; background: #eee; display:flex; align-items: center; justify-content:center;">Image</div></td>
-                            <td><strong>Product Name Here</strong></td>
-                            <td>$50.00</td>
-                            <td>
-                                <div style="display: flex; border: 1px solid #ddd; width: 100px;">
-                                    <button style="border: none; background: transparent; padding: 5px 10px; cursor: pointer;">-</button>
-                                    <input type="text" value="1" style="width: 40px; text-align: center; border: none; border-left: 1px solid #ddd; border-right: 1px solid #ddd;">
-                                    <button style="border: none; background: transparent; padding: 5px 10px; cursor: pointer;">+</button>
-                                </div>
-                            </td>
-                            <td>$50.00</td>
-                            <td><a href="#" style="color: red;"><i class="fas fa-times"></i></a></td>
-                        </tr>
-                          <tr>
-                            <td><div style="width: 80px; height: 80px; background: #eee; display:flex; align-items: center; justify-content:center;">Image</div></td>
-                            <td><strong>Another Product</strong></td>
-                            <td>$120.00</td>
-                            <td>
-                                <div style="display: flex; border: 1px solid #ddd; width: 100px;">
-                                    <button style="border: none; background: transparent; padding: 5px 10px; cursor: pointer;">-</button>
-                                    <input type="text" value="1" style="width: 40px; text-align: center; border: none; border-left: 1px solid #ddd; border-right: 1px solid #ddd;">
-                                    <button style="border: none; background: transparent; padding: 5px 10px; cursor: pointer;">+</button>
-                                </div>
-                            </td>
-                            <td>$120.00</td>
-                            <td><a href="#" style="color: red;"><i class="fas fa-times"></i></a></td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <div style="display: flex; justify-content: space-between; margin-top: 30px;">
-                    <div>
-                         <form action="#" style="display: flex; gap: 10px;">
-                            <input type="text" placeholder="Coupon Code" style="padding: 10px; border: 1px solid #ddd; width: 200px;">
-                            <button class="btn btn-primary" style="padding: 10px 20px;">Apply Coupon</button>
-                         </form>
+            <div class="tracking-wrapper">
+                <h3>Order Tracking</h3>
+                <p class="tracking-desc">To track your order please enter your Order ID in the box below and press the "Track" button. This was given to you on your receipt and in the confirmation email you should have received.</p>
+                <form action="#" class="page-form" style="text-align: left; max-width: 600px; margin: 0 auto;">
+                    <div class="form-group">
+                        <label class="form-label">Order ID</label>
+                        <input type="text" class="form-control" placeholder="Found in your order confirmation email.">
                     </div>
-                    <div style="width: 300px; padding: 20px; background: #f9f9f9; border: 1px solid #eee;">
-                        <h4 style="margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">Cart Totals</h4>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                            <span>Subtotal</span>
-                            <span>$170.00</span>
-                        </div>
-                         <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
-                            <span>Total</span>
-                            <strong style="color: var(--primary-color); font-size: 1.2rem;">$170.00</strong>
-                        </div>
-                        <a href="checkout.html" class="btn btn-primary" style="width: 100%; text-align: center;">Proceed to Checkout</a>
+                    <div class="form-group">
+                        <label class="form-label">Billing Email</label>
+                        <input type="email" class="form-control" placeholder="Email you used during checkout.">
                     </div>
-                </div>
-
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button type="submit" class="btn btn-primary btn-full" style="max-width: 200px;">Track Order</button>
+                    </div>
+                </form>
             </div>
         </div>
     </main>
@@ -219,5 +184,6 @@
     </style>
 
 <script src="assets/js/mobile-nav.js"></script>
+<script src="assets/js/whatsapp-commerce.js"></script>
 </body>
 </html>

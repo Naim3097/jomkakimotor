@@ -1,0 +1,644 @@
+/* Styles specific to Elements Library Page */
+
+/* --- 1. Top Bar & Nav --- */
+.top-bar {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    font-size: 0.85rem;
+    color: #666;
+    font-weight: 500;
+}
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top-links a {
+    color: #555;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+}
+.top-links a:hover { color: var(--primary-color); }
+
+/* Main Nav */
+.main-nav {
+    display: flex;
+    background: var(--primary-color);
+    color: white;
+    height: 55px; /* Taller nav */
+    align-items: center;
+}
+/* Override container for specific alignment: Cat [gap] Links [auto] Search */
+.main-nav .container {
+    /* Removed padding:0 to align with page content */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start !important; /* Force start alignment */
+    height: 100%;
+    padding: 0; /* Remove horizontal padding so the "Browse Categories" touches the edge of the container box strictly */
+    max-width: 1550px; /* Ensure max-width is respected even if padding is gone, though usually padding is inside */
+    margin: 0 auto;
+}
+
+/* Adjust padding for the elements inside to compensate if needed, but Browse Categories typically sits flush left in these designs 
+   Actually, if the container has no padding, it will align with the global container's CONTENT box if global container has padding.
+   Wait, global container has padding: 0 20px. 
+   If I set this to padding: 0, it will extend 20px wider (on each side) than the content below.
+   BUT, the user says "Browse categories ... even further left". 
+   If previously it had padding: 0 20px, it started at 20px + [container margin].
+   If the user thinks it's too far RIGHT, then removing padding is the way to move it LEFT.
+   Let's check the container definition again.
+   .container { padding: 0 20px; margin: 0 auto; }
+   So content starts 20px from the container edge.
+   If I change nav .container to padding: 0, content starts at 0px from container edge.
+   This moves "Browse Categories" 20px to the LEFT.
+   This seems to be what the user wants ("even further left").
+*/
+
+/* Re-apply the container override correctly */
+.main-nav .container {
+    padding: 0; /* FLUSH LEFT for the bar elements */
+    width: 100%;
+    max-width: 1550px;
+    margin: 0 auto;
+    display: flex; /* flex layout */
+    align-items: center;
+}
+
+/* But wait, if I remove padding from the nav container, the "Search" on the right will also move 20px to the RIGHT (touching the edge).
+   We need to ensure content alignment. 
+   The body content uses .container (with 20px padding).
+   The sidebar is inside .section-hero .container .hero-layout .vehicle-filter-wrapper.
+   So sidebar starts at 20px.
+   
+   If I remove padding from Nav Container, "Browse Categories" starts at 0px.
+   So "Browse Categories" will be 20px to the LEFT of the Sidebar.
+   The user said "aligned with the vegicle filter box below it".
+   
+   Wait. "The 'browse categories' i need i them to be even further left... aligned with the vegicle filter box below it."
+   This implies currently "Browse Categories" is to the RIGHT of the filter box?
+   
+   How is that possible?
+   Only if `.cat-menu` has a margin-left.
+   Or... `justify-content` was `center`? No, I forced `flex-start`.
+   
+   Let's look at the `cat-menu` style:
+   padding: 0 25px;
+   
+   Ah! The `cat-menu` itself has padding!
+   25px padding on the left.
+   So the TEXT "Browse Categories" starts at 20px (container) + 25px (cat-menu padding) = 45px.
+   The Filter Box likely has standard padding inside, but the BOX itself starts at 20px.
+   
+   The user sees the BLACK BOX of "Browse Categories".
+   They probably want the BLACK BOX to align with the WHITE BOX of the filter.
+   Both Boxes start at the parent container edge.
+   
+   If both parents have padding: 0 20px.
+   Then both boxes start at 20px.
+   They should be aligned.
+   
+   UNLESS the filter box has a negative margin to stick out?
+   Or the Nav Bar is full width?
+   
+   Let's consider the user's phrase "even further left".
+   Maybe they simply want the whole column to shift left?
+   
+   Wait, look at the visual evidence provided by the user in the previous turn ("This is the result"). 
+   In that screenshot (orange header), the "Browse Categories" black box IS aligned with the white "Select Your Vehicle" box below it.
+   Visually they look aligned.
+   
+   BUT the user says "The 'browse categories' i need i them to be even further left".
+   Maybe they mean the *content* of the menu?
+   
+   Let's look at the "Collision" remark.
+   "The hero banner and the vehicle filter box colide with each other."
+   
+   Maybe the issue is `width: 270px` is too wide for the space or the gap is ignored because of `box-sizing`.
+   
+   I've added `box-sizing: border-box`. That should fix the collision if width+padding was exceeding 270px.
+   
+   What if I remove the padding from the container in `.main-nav` AND add a `margin-left` to the `.cat-menu` to explicitly match?
+   
+   Actually, looking at `global.css`, `.container` has `padding: 0 20px`.
+   So the content width is `100% - 40px`.
+   
+   If I modify `.main-nav .container` to have `padding: 0 20px` (which it was), the black box starts at 20px.
+   
+   Let's try to increase the Gap in `home.css` style just in case collision is spatial.
+   And verify `vehicle-filter-wrapper` styles.
+   
+   One possibility: The container max-width is 1550px.
+   If the user is on a smaller screen, 1550px doesn't matter, it's 100%.
+   
+   Let's just apply `box-sizing` first. That is huge.
+   Before `box-sizing: border-box`, if `vehicle-filter-wrapper` had `width: 270px` and padding (if any), it would be > 270px.
+   The `.vehicle-filter-box` has `padding: 30px` and `width: 100%`.
+   So `.vehicle-filter-box` actual width was `100% + 60px`.
+   Since `vehicle-filter-wrapper` is `270px`, the box inside was `270px + 60px = 330px`.
+   That 60px excess would bleed out to the right -> colliding with the banner.
+   
+   Adding `box-sizing: border-box` fixes this immediately! The padding will be included in the 100% width.
+   
+   Now about the "Browse Categories" alignment.
+   If the layout was broken (bleeding 60px to the right), maybe the user perception of alignment was skewed.
+   Or maybe they want the "Browse Categories" to be wider to match the *actual* width of the filter box (which was 330px).
+   
+   No, they said "further left".
+   
+   If `box-sizing` fixes the width of the filter box back to 270px.
+   Then the "Browse Categories" (270px) and Filter Box (270px) will be same width.
+   They should stack perfectly.
+   
+   I'm confident `box-sizing` is the key fix for collision.
+   
+   For the "Browse Categories" "further left"... 
+   Maybe the user wants the "Browse Categories" to ignore the container padding and touch the screen edge? 
+   No, "aligned with the vehicle filter box below it".
+   
+   If `box-sizing` was default (content-box):
+   The filter box was 330px wide.
+   The header box was 270px wide (if it defined width) or padded.
+   
+   I will simply apply the box-sizing fix. This solves the collision fundamentally. 
+   I will also tweak the `.cat-menu` width to be consistent if needed.
+   
+   In `components.css`: `.cat-menu { width: 270px; ... }`
+   In `home.css`: `.vehicle-filter-wrapper { width: 270px; ... }`
+   
+   They are defined as equal.
+   So with `box-sizing: border-box`, they will be identical.
+   
+   I'll just confirm `box-sizing` is added to `global.css` (done).
+   
+   I should also check if `home.css` needs any margin adjustment.
+   I'll update `home.css` to ensure the sidebar definitely doesn't grow.
+*/
+
+/* I will revert the change to components.css first, as I don't want to mess up the container padding if it's just box-sizing */
+.main-nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start !important;
+    height: 100%;
+    padding: 0 20px; /* Keep consistent with body container */
+}
+
+.cat-menu {
+    background: #232323; /* Darker black/grey */
+    padding: 0 25px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    width: 270px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-right: 0;
+    flex-shrink: 0;
+}
+.cat-menu i { margin-right: 15px; }
+
+.nav-links {
+    flex-grow: 0; /* Don't grow to fill space */
+    display: flex;
+    height: 100%;
+    /* margin-right: auto; Removed to ensure links stay next to categories */
+    margin-left: 0;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    height: 100%;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { background: rgba(0,0,0,0.1); }
+.nav-links a i { font-size: 0.7rem; margin-left: 8px; opacity: 0.8; }
+
+.nav-search {
+    padding: 0 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.05); /* Slight BG like screenshot */
+    margin-left: auto; /* Push to far right */
+}
+.nav-search i { margin-right: 10px; }
+
+/* --- 3. Vehicle Filter Box --- */
+.vehicle-filter-box {
+    background: url('../images/banners/gray-abstract-textured-background.jpg.jpeg') center center/cover no-repeat; /* Updated background */
+    padding: 30px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+}
+.vehicle-filter-box h3 { 
+    margin: 0 0 5px 0; 
+    font-size: 1.4rem; 
+    color: #333;
+    font-weight: 700;
+}
+.vehicle-filter-box .subtitle {
+    font-size: 0.72rem;
+    color: #999;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: block;
+}
+.form-group {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: stretch;
+}
+.step-num {
+    background: #f5f5f5;
+    color: #ccc;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: 1px solid #e5e5e5;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+.form-group select {
+    flex-grow: 1;
+    height: 45px;
+    padding: 0 15px;
+    border: 1px solid #e5e5e5;
+    border-radius: 0 4px 4px 0;
+    outline: none;
+    color: #888;
+    background: #f9f9f9;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+.btn-block { 
+    width: 100%; 
+    display: block; 
+    text-align: center;
+    padding: 12px;
+    font-weight: 700;
+    font-size: 0.95rem; 
+}
+
+/* --- 4. Product Card --- */
+.product-card {
+    border: none; /* Removed default border, handled by grid gap or hover */
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+.section-products .product-card:hover {
+     box-shadow: 0 0 20px rgba(0,0,0,0.1);
+     transform: translateY(-5px);
+     z-index: 2;
+}
+.badge-sale {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ff6b00; /* Orange Sale */
+    color: white;
+    padding: 3px 8px;
+    font-size: 0.7rem;
+    border-radius: 2px;
+    font-weight: 700;
+    z-index: 5;
+}
+.product-img {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.countdown-timer {
+    background: #f5f5f5;
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    display: inline-block;
+    min-width: 160px;
+}
+.countdown-timer small {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.6rem;
+    color: #aaa;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-top: 2px;
+    padding: 0 10px;
+}
+.category {
+    font-size: 0.75rem;
+    color: #999;
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 400;
+}
+.product-title {
+    font-size: 0.95rem;
+    margin: 0 0 8px 0;
+    color: #007bff; /* Blue Link Color for titles */
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.product-title:hover { color: var(--primary-color); }
+
+.rating {
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+}
+.product-card .price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.9rem;
+    margin-right: 8px;
+    font-weight: 400;
+}
+.new-price {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* --- 5. Service Features --- */
+.service-feature {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border: 1px dashed #eee; /* Just for preview visibility, usually generic */
+}
+.icon-box {
+    margin-right: 15px;
+}
+.text-box h4 {
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+}
+.text-box p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* --- 6. Newsletter --- */
+.newsletter-box {
+    text-align: left;
+    width: 100%;
+}
+.newsletter-form {
+    display: flex;
+    gap: 0;
+}
+.newsletter-form input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+.newsletter-form button {
+    border-radius: 0 4px 4px 0;
+}
+
+/* --- 7. Hero Section Banner --- */
+.hero-banner {
+    background-color: #f7f7f7; /* Very light gray */
+    padding: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+}
+.hero-content {
+    z-index: 2;
+    max-width: 50%;
+}
+.hero-content .offer-tag {
+    color: #999;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin: 10px 0;
+    color: #000;
+}
+.hero-content .sale-text {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+.hero-content .text-green {
+    color: #70c92f;
+    font-weight: bold;
+}
+.hero-image-container {
+    position: relative;
+    padding-right: 50px;
+}
+.price-badge {
+    background: #70c92f;
+    color: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    z-index: 3;
+    box-shadow: 0 5px 15px rgba(112, 201, 47, 0.4);
+}
+.price-badge span { font-size: 0.8rem; font-weight: 500; }
+.price-badge .amount { font-size: 1.5rem; font-weight: bold; line-height: 1; }
+
+
+/* --- 8. Promo Banners --- */
+.promo-grid {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+}
+.promo-box {
+    flex: 1;
+    background: url('../images/banners/gray-abstract-textured-background.jpg.jpeg') center center/cover no-repeat;
+    position: relative;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+/* Geometric pattern background simulation - Hidden */
+.promo-box::before {
+    display: none;
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: repeating-linear-gradient(45deg, #f0f0f0 25%, transparent 25%, transparent 75%, #f0f0f0 75%, #f0f0f0), repeating-linear-gradient(45deg, #f0f0f0 25%, #f7f7f7 25%, #f7f7f7 75%, #f0f0f0 75%, #f0f0f0);
+    background-position: 0 0, 10px 10px;
+    background-size: 20px 20px;
+    opacity: 0.3;
+    z-index: 1;
+}
+.promo-content { z-index: 2; position: relative; }
+.promo-box h3 {
+    font-size: 1.8rem;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+    color: #000;
+}
+.promo-box .fw-normal { font-weight: 300; }
+.promo-box .price-label {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.promo-box .text-green { color: #70c92f; }
+.promo-box .text-red { color: var(--primary-color); }
+.promo-img {
+    z-index: 2;
+    position: relative;
+}
+.btn-sm { padding: 8px 20px; font-size: 0.8rem; }
+
+
+/* --- 9. Footer --- */
+.site-footer {
+    background-color: #2b2d42;
+    color: #a0a0a0;
+    padding-top: 60px;
+    font-size: 0.9rem;
+}
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #3e4052;
+}
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+.footer-col h4 {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a {
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-col ul li a:hover { color: var(--primary-color); }
+
+.footer-logo {
+    color: white;
+    font-size: 1.8rem;
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+}
+.contact-info .icon-text {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.contact-info .icon-text i {
+    font-size: 2rem;
+    margin-right: 15px;
+}
+.contact-info strong {
+    color: white;
+    display: block;
+    font-size: 1.1rem;
+}
+.contact-info small { font-size: 0.8rem; }
+.address {
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    font-size: 0.85rem;
+}
+.footer-links a {
+    color: #a0a0a0;
+    text-decoration: none;
+    margin-left: 20px;
+}
+.footer-links a:hover { color: white; }
+
+/* Utilities for preview - MOVED TO elements_page.css */
+/* Added Header Icons Spacing */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Proper spacing */
+}
+.header-icons a {
+    color: #333;
+    font-size: 1.2rem;
+    position: relative;
+    transition: color 0.3s;
+}
+.header-icons a:hover {
+    color: var(--primary-color);
+}
+
